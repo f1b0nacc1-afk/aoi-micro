@@ -1,0 +1,14 @@
+{
+ "gt": [],
+ "false_parts": [
+  {
+   "ref": "C16",
+   "package": "CP_Elec_6.3x7.7",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 61
+}

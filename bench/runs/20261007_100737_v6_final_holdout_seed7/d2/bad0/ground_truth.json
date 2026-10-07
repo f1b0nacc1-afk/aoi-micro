@@ -1,0 +1,94 @@
+{
+ "gt": [
+  {
+   "type": "foreign",
+   "ref": null,
+   "x": 61.35,
+   "y": 15.02,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "rotate",
+   "ref": "Q1",
+   "pkg": "SOT-23",
+   "x": 54.24,
+   "y": 24.73,
+   "expect": [
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ROTATED"
+   ]
+  },
+  {
+   "type": "shift",
+   "ref": "C14",
+   "pkg": "0805",
+   "x": 26.14,
+   "y": 7.69,
+   "expect": [
+    "SHIFT"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "SHIFT"
+   ]
+  },
+  {
+   "type": "rotate",
+   "ref": "D5",
+   "pkg": "SOD-123",
+   "x": 29.28,
+   "y": 30.65,
+   "expect": [
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ROTATED"
+   ]
+  },
+  {
+   "type": "tombstone",
+   "ref": "R2",
+   "pkg": "1206",
+   "x": 30.49,
+   "y": 7.13,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "no_solder",
+   "ref": "U7",
+   "pkg": "SOT-223",
+   "x": 49.55,
+   "y": 41.18,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_parts": [],
+ "false_board": [],
+ "n_parts": 65
+}

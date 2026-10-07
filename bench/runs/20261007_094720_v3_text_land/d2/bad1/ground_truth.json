@@ -1,0 +1,110 @@
+{
+ "gt": [
+  {
+   "type": "shift",
+   "ref": "R5",
+   "pkg": "0603",
+   "x": 69.55,
+   "y": 38.18,
+   "expect": [
+    "SHIFT"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "SHIFT"
+   ]
+  },
+  {
+   "type": "ball",
+   "ref": "C13",
+   "pkg": "1206",
+   "x": 62.81,
+   "y": 47.86,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "bridge",
+   "ref": "U4",
+   "pkg": "TSSOP-20",
+   "x": 24.58,
+   "y": 14.32,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "missing",
+   "ref": "Q5",
+   "pkg": "SOT-23",
+   "x": 36.99,
+   "y": 6.2,
+   "expect": [
+    "MISSING",
+    "MISMATCH"
+   ],
+   "detected": true,
+   "classified": false,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "foreign",
+   "ref": null,
+   "x": 74.34,
+   "y": 35.59,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "billboard",
+   "ref": "C8",
+   "pkg": "1206",
+   "x": 14.72,
+   "y": 14.39,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "C11",
+   "package": "0402",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "D8",
+   "package": "LED_0805",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 72
+}

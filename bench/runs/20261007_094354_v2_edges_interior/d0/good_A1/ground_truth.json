@@ -1,0 +1,14 @@
+{
+ "gt": [],
+ "false_parts": [
+  {
+   "ref": "L1",
+   "package": "L_4x4",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 61
+}

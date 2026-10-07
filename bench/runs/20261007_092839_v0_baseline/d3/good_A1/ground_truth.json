@@ -1,0 +1,14 @@
+{
+ "gt": [],
+ "false_parts": [
+  {
+   "ref": "D5",
+   "package": "LED_0805",
+   "defects": [
+    "POLARITY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 50
+}

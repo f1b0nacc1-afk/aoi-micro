@@ -1,0 +1,112 @@
+{
+ "gt": [
+  {
+   "type": "polarity",
+   "ref": "U10",
+   "pkg": "SOIC-8",
+   "x": 44.4,
+   "y": 6.77,
+   "expect": [
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "POLARITY"
+   ]
+  },
+  {
+   "type": "no_solder",
+   "ref": "R11",
+   "pkg": "0402",
+   "x": 43.56,
+   "y": 36.07,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "ball",
+   "ref": "Q2",
+   "pkg": "SOT-23",
+   "x": 76.81,
+   "y": 41.0,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "no_solder",
+   "ref": "C9",
+   "pkg": "1206",
+   "x": 10.12,
+   "y": 24.68,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "rotate",
+   "ref": "C11",
+   "pkg": "0402",
+   "x": 70.32,
+   "y": 4.6,
+   "expect": [
+    "ROTATED"
+   ],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "wrong",
+   "ref": "C10",
+   "pkg": "0805",
+   "x": 49.69,
+   "y": 50.23,
+   "expect": [
+    "MISMATCH",
+    "MISSING",
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "R14",
+   "package": "0603",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R16",
+   "package": "0805",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 72
+}

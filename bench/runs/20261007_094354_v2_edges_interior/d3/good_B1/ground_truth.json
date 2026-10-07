@@ -1,0 +1,49 @@
+{
+ "gt": [],
+ "false_parts": [
+  {
+   "ref": "R1",
+   "package": "0603",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R2",
+   "package": "1206",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R3",
+   "package": "1206",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R4",
+   "package": "1206",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R10",
+   "package": "1206",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R11",
+   "package": "0805",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 50
+}

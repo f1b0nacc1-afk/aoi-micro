@@ -1,0 +1,109 @@
+{
+ "gt": [
+  {
+   "type": "wrong",
+   "ref": "C18",
+   "pkg": "0603",
+   "x": 71.02,
+   "y": 15.88,
+   "expect": [
+    "MISMATCH",
+    "MISSING",
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "billboard",
+   "ref": "R11",
+   "pkg": "0805",
+   "x": 21.27,
+   "y": 5.84,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISSING"
+   ]
+  },
+  {
+   "type": "rot90",
+   "ref": "U1",
+   "pkg": "LQFP-48",
+   "x": 31.94,
+   "y": 40.49,
+   "expect": [
+    "POLARITY",
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "POLARITY"
+   ]
+  },
+  {
+   "type": "marking",
+   "ref": "U2",
+   "pkg": "QFN-32",
+   "x": 41.18,
+   "y": 7.55,
+   "expect": [],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "damaged",
+   "ref": "C9",
+   "pkg": "0805",
+   "x": 30.04,
+   "y": 10.39,
+   "expect": [
+    "MISMATCH",
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": false,
+   "codes": [
+    "MISSING"
+   ]
+  },
+  {
+   "type": "foreign",
+   "ref": null,
+   "x": 55.35,
+   "y": 19.57,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "U4",
+   "package": "TSSOP-20",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "Y2",
+   "package": "Crystal_SMD_3225",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 70
+}

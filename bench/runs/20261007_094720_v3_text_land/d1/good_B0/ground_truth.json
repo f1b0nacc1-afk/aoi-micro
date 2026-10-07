@@ -1,0 +1,28 @@
+{
+ "gt": [],
+ "false_parts": [
+  {
+   "ref": "R6",
+   "package": "0402",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "D6",
+   "package": "SMA",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "C26",
+   "package": "0402",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 70
+}

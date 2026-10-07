@@ -1,0 +1,42 @@
+{
+ "gt": [],
+ "false_parts": [
+  {
+   "ref": "U3",
+   "package": "SOIC-8",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R2",
+   "package": "1206",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "C5",
+   "package": "0402",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "L2",
+   "package": "L_4x4",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R17",
+   "package": "1206",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 72
+}

@@ -1,0 +1,103 @@
+{
+ "gt": [
+  {
+   "type": "foreign",
+   "ref": null,
+   "x": 47.02,
+   "y": 10.16,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "marking",
+   "ref": "U5",
+   "pkg": "SOIC-8",
+   "x": 68.53,
+   "y": 21.86,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "rot90",
+   "ref": "U9",
+   "pkg": "QFN-32",
+   "x": 8.51,
+   "y": 23.24,
+   "expect": [
+    "POLARITY",
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "POLARITY"
+   ]
+  },
+  {
+   "type": "wrong",
+   "ref": "C9",
+   "pkg": "0805",
+   "x": 30.04,
+   "y": 10.39,
+   "expect": [
+    "MISMATCH",
+    "MISSING",
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "tombstone",
+   "ref": "R16",
+   "pkg": "0805",
+   "x": 71.31,
+   "y": 10.35,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISSING"
+   ]
+  },
+  {
+   "type": "no_solder",
+   "ref": "R4",
+   "pkg": "0805",
+   "x": 48.59,
+   "y": 46.56,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "C24",
+   "package": "0603",
+   "defects": [
+    "MISSING"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 70
+}

@@ -1,0 +1,104 @@
+{
+ "gt": [
+  {
+   "type": "wrong",
+   "ref": "R9",
+   "pkg": "0603",
+   "x": 36.64,
+   "y": 24.94,
+   "expect": [
+    "MISMATCH",
+    "MISSING",
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "foreign",
+   "ref": null,
+   "x": 57.16,
+   "y": 41.26,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "tombstone",
+   "ref": "C16",
+   "pkg": "0805",
+   "x": 32.16,
+   "y": 8.8,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "no_solder",
+   "ref": "C13",
+   "pkg": "1206",
+   "x": 23.48,
+   "y": 29.22,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "shift",
+   "ref": "C8",
+   "pkg": "Tantalum_Case-A",
+   "x": 5.06,
+   "y": 12.4,
+   "expect": [
+    "SHIFT"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "SHIFT"
+   ]
+  },
+  {
+   "type": "polarity",
+   "ref": "D2",
+   "pkg": "SOD-123",
+   "x": 52.2,
+   "y": 5.09,
+   "expect": [
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": false,
+   "codes": [
+    "SHIFT"
+   ]
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "U7",
+   "package": "SOIC-8",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 63
+}

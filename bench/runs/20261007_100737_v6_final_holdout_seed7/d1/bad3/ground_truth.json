@@ -1,0 +1,98 @@
+{
+ "gt": [
+  {
+   "type": "marking",
+   "ref": "U5",
+   "pkg": "SOT-223",
+   "x": 52.56,
+   "y": 36.18,
+   "expect": [],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "rot90",
+   "ref": "U2",
+   "pkg": "QFN-32",
+   "x": 38.68,
+   "y": 15.38,
+   "expect": [
+    "POLARITY",
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "POLARITY"
+   ]
+  },
+  {
+   "type": "billboard",
+   "ref": "R1",
+   "pkg": "0805",
+   "x": 54.84,
+   "y": 14.73,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "tombstone",
+   "ref": "R5",
+   "pkg": "0402",
+   "x": 41.94,
+   "y": 9.07,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "bridge",
+   "ref": "U7",
+   "pkg": "SOIC-8",
+   "x": 16.33,
+   "y": 26.08,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "polarity",
+   "ref": "D6",
+   "pkg": "SOD-123",
+   "x": 58.96,
+   "y": 34.67,
+   "expect": [
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "POLARITY"
+   ]
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "C8",
+   "package": "Tantalum_Case-A",
+   "defects": [
+    "MISSING"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 63
+}

@@ -1,0 +1,98 @@
+{
+ "gt": [
+  {
+   "type": "shift",
+   "ref": "D11",
+   "pkg": "LED_0805",
+   "x": 25.89,
+   "y": 5.35,
+   "expect": [
+    "SHIFT"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY",
+    "SHIFT"
+   ]
+  },
+  {
+   "type": "rotate",
+   "ref": "U6",
+   "pkg": "SOIC-16",
+   "x": 13.46,
+   "y": 12.19,
+   "expect": [
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY",
+    "ROTATED"
+   ]
+  },
+  {
+   "type": "missing",
+   "ref": "C4",
+   "pkg": "0805",
+   "x": 67.75,
+   "y": 35.24,
+   "expect": [
+    "MISSING",
+    "MISMATCH"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "excess",
+   "ref": "U3",
+   "pkg": "SOIC-8",
+   "x": 50.22,
+   "y": 36.55,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "tombstone",
+   "ref": "C14",
+   "pkg": "0805",
+   "x": 6.92,
+   "y": 41.24,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "bridge",
+   "ref": "U7",
+   "pkg": "SOIC-16",
+   "x": 16.94,
+   "y": 22.37,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_parts": [],
+ "false_board": [],
+ "n_parts": 70
+}

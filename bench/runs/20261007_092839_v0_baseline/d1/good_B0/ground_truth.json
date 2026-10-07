@@ -1,0 +1,301 @@
+{
+ "gt": [],
+ "false_parts": [
+  {
+   "ref": "U3",
+   "package": "SOIC-8",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "Q1",
+   "package": "SOT-23",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C2",
+   "package": "Tantalum_Case-A",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C3",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R1",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R3",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C4",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C5",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C6",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "U8",
+   "package": "SOIC-8",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R4",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C7",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C8",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R5",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "U9",
+   "package": "QFN-32",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C9",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C10",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C11",
+   "package": "1206",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C12",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R7",
+   "package": "1206",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C13",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "D6",
+   "package": "SMA",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R8",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C14",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R9",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C15",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C16",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C17",
+   "package": "0402",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C18",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C19",
+   "package": "0402",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R11",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C20",
+   "package": "0402",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C21",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C22",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C23",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C24",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C25",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R15",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R16",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C26",
+   "package": "0402",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C27",
+   "package": "0402",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R18",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 70
+}

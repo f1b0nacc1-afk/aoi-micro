@@ -1,0 +1,91 @@
+{
+ "gt": [
+  {
+   "type": "polarity",
+   "ref": "U1",
+   "pkg": "LQFP-48",
+   "x": 27.32,
+   "y": 25.13,
+   "expect": [
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "POLARITY"
+   ]
+  },
+  {
+   "type": "rotate",
+   "ref": "D3",
+   "pkg": "SMA",
+   "x": 50.71,
+   "y": 17.22,
+   "expect": [
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ROTATED"
+   ]
+  },
+  {
+   "type": "rot90",
+   "ref": "U2",
+   "pkg": "QFN-32",
+   "x": 30.9,
+   "y": 41.52,
+   "expect": [
+    "POLARITY",
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "POLARITY"
+   ]
+  },
+  {
+   "type": "marking",
+   "ref": "U5",
+   "pkg": "QFN-32",
+   "x": 30.9,
+   "y": 7.0,
+   "expect": [],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "billboard",
+   "ref": "C17",
+   "pkg": "0805",
+   "x": 39.14,
+   "y": 44.9,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISSING"
+   ]
+  },
+  {
+   "type": "foreign",
+   "ref": null,
+   "x": 21.12,
+   "y": 40.52,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_parts": [],
+ "false_board": [],
+ "n_parts": 60
+}

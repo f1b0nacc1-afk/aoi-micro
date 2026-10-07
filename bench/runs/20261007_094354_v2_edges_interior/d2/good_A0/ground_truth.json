@@ -1,0 +1,42 @@
+{
+ "gt": [],
+ "false_parts": [
+  {
+   "ref": "U1",
+   "package": "LQFP-48",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "U3",
+   "package": "SOIC-8",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "C1",
+   "package": "CP_Elec_5x5.8",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "L2",
+   "package": "L_4x4",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "D5",
+   "package": "LED_0805",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 72
+}

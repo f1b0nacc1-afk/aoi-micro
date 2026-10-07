@@ -1,0 +1,35 @@
+{
+ "gt": [],
+ "false_parts": [
+  {
+   "ref": "U2",
+   "package": "QFN-32",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R7",
+   "package": "1206",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "D6",
+   "package": "SMA",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R17",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 70
+}

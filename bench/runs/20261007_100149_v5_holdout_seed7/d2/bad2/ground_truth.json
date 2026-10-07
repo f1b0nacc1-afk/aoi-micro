@@ -1,0 +1,93 @@
+{
+ "gt": [
+  {
+   "type": "marking",
+   "ref": "U4",
+   "pkg": "TSSOP-20",
+   "x": 15.25,
+   "y": 32.93,
+   "expect": [],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "ball",
+   "ref": "C3",
+   "pkg": "0402",
+   "x": 48.76,
+   "y": 33.02,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "rot90",
+   "ref": "U1",
+   "pkg": "LQFP-48",
+   "x": 40.4,
+   "y": 8.77,
+   "expect": [
+    "POLARITY",
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "POLARITY"
+   ]
+  },
+  {
+   "type": "damaged",
+   "ref": "C10",
+   "pkg": "1206",
+   "x": 51.08,
+   "y": 11.21,
+   "expect": [
+    "MISMATCH",
+    "ANOMALY"
+   ],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "shift",
+   "ref": "C15",
+   "pkg": "Tantalum_Case-A",
+   "x": 63.74,
+   "y": 37.04,
+   "expect": [
+    "SHIFT"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "SHIFT"
+   ]
+  },
+  {
+   "type": "excess",
+   "ref": "U2",
+   "pkg": "QFN-32",
+   "x": 25.72,
+   "y": 17.96,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": false,
+   "codes": [
+    "MISSING"
+   ]
+  }
+ ],
+ "false_parts": [],
+ "false_board": [],
+ "n_parts": 65
+}

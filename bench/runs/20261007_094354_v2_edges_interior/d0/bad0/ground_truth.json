@@ -1,0 +1,112 @@
+{
+ "gt": [
+  {
+   "type": "damaged",
+   "ref": "C19",
+   "pkg": "1206",
+   "x": 9.21,
+   "y": 14.75,
+   "expect": [
+    "MISMATCH",
+    "ANOMALY"
+   ],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "polarity",
+   "ref": "C1",
+   "pkg": "CP_Elec_5x5.8",
+   "x": 8.06,
+   "y": 32.48,
+   "expect": [
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": false,
+   "codes": [
+    "MISSING"
+   ]
+  },
+  {
+   "type": "ball",
+   "ref": "D4",
+   "pkg": "LED_0805",
+   "x": 13.79,
+   "y": 44.04,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "excess",
+   "ref": "D2",
+   "pkg": "LED_0805",
+   "x": 65.31,
+   "y": 26.29,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "marking",
+   "ref": "U5",
+   "pkg": "QFN-32",
+   "x": 28.84,
+   "y": 9.85,
+   "expect": [],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "tombstone",
+   "ref": "C11",
+   "pkg": "1206",
+   "x": 38.22,
+   "y": 41.38,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "U1",
+   "package": "LQFP-48",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "C2",
+   "package": "Tantalum_Case-A",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "C4",
+   "package": "CP_Elec_5x5.8",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 61
+}

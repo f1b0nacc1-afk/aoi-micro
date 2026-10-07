@@ -1,0 +1,107 @@
+{
+ "gt": [
+  {
+   "type": "rotate",
+   "ref": "R5",
+   "pkg": "0805",
+   "x": 19.87,
+   "y": 38.3,
+   "expect": [
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ROTATED"
+   ]
+  },
+  {
+   "type": "missing",
+   "ref": "C23",
+   "pkg": "0603",
+   "x": 60.24,
+   "y": 5.15,
+   "expect": [
+    "MISSING",
+    "MISMATCH"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "damaged",
+   "ref": "R1",
+   "pkg": "0805",
+   "x": 62.41,
+   "y": 42.92,
+   "expect": [
+    "MISMATCH",
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": false,
+   "codes": [
+    "MISSING"
+   ]
+  },
+  {
+   "type": "bridge",
+   "ref": "U7",
+   "pkg": "SOIC-16",
+   "x": 19.48,
+   "y": 27.87,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "shift",
+   "ref": "R7",
+   "pkg": "1206",
+   "x": 43.01,
+   "y": 42.7,
+   "expect": [
+    "SHIFT"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "SHIFT"
+   ]
+  },
+  {
+   "type": "polarity",
+   "ref": "Q3",
+   "pkg": "SOT-23",
+   "x": 6.57,
+   "y": 35.81,
+   "expect": [
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": false,
+   "codes": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "C19",
+   "package": "0402",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 70
+}

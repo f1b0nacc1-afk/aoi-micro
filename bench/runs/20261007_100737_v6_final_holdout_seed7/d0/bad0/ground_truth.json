@@ -1,0 +1,101 @@
+{
+ "gt": [
+  {
+   "type": "damaged",
+   "ref": "R8",
+   "pkg": "0805",
+   "x": 43.04,
+   "y": 39.35,
+   "expect": [
+    "MISMATCH",
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": false,
+   "codes": [
+    "MISSING"
+   ]
+  },
+  {
+   "type": "excess",
+   "ref": "Q2",
+   "pkg": "SOT-23",
+   "x": 12.52,
+   "y": 23.1,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "foreign",
+   "ref": null,
+   "x": 44.42,
+   "y": 30.74,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "bridge",
+   "ref": "U5",
+   "pkg": "QFN-32",
+   "x": 33.35,
+   "y": 6.0,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "rotate",
+   "ref": "D4",
+   "pkg": "SOD-123",
+   "x": 56.53,
+   "y": 6.56,
+   "expect": [
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ROTATED"
+   ]
+  },
+  {
+   "type": "marking",
+   "ref": "U2",
+   "pkg": "QFN-32",
+   "x": 30.9,
+   "y": 41.52,
+   "expect": [],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "C17",
+   "package": "0805",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 60
+}

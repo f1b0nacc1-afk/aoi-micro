@@ -1,0 +1,35 @@
+{
+ "gt": [],
+ "false_parts": [
+  {
+   "ref": "U3",
+   "package": "SOIC-8",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "U6",
+   "package": "TQFP-32",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "U10",
+   "package": "SOIC-8",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "L2",
+   "package": "L_4x4",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 72
+}

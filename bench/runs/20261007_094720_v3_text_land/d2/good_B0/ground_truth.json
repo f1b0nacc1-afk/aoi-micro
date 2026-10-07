@@ -1,0 +1,35 @@
+{
+ "gt": [],
+ "false_parts": [
+  {
+   "ref": "C5",
+   "package": "0402",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "D3",
+   "package": "LED_0805",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "L2",
+   "package": "L_4x4",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R16",
+   "package": "0805",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 72
+}

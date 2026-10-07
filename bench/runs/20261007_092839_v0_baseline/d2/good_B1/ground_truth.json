@@ -1,0 +1,266 @@
+{
+ "gt": [],
+ "false_parts": [
+  {
+   "ref": "C2",
+   "package": "Tantalum_Case-A",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C3",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "U7",
+   "package": "SOT-223",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R2",
+   "package": "1206",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C4",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C5",
+   "package": "0402",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R4",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C6",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R5",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R6",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C7",
+   "package": "1206",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "L1",
+   "package": "L_4x4",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R9",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R10",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C8",
+   "package": "1206",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C9",
+   "package": "1206",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "L2",
+   "package": "L_4x4",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C10",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R12",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R13",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R14",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R16",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C12",
+   "package": "0402",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C13",
+   "package": "1206",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C14",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R17",
+   "package": "1206",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C15",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C16",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R18",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R19",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C17",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R20",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "D7",
+   "package": "LED_0805",
+   "defects": [
+    "POLARITY"
+   ]
+  },
+  {
+   "ref": "C19",
+   "package": "0402",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C20",
+   "package": "0402",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C21",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C22",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 72
+}

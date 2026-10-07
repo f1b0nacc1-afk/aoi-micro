@@ -1,0 +1,100 @@
+{
+ "gt": [
+  {
+   "type": "foreign",
+   "ref": null,
+   "x": 45.67,
+   "y": 33.4,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "tombstone",
+   "ref": "C23",
+   "pkg": "0805",
+   "x": 29.01,
+   "y": 35.8,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "polarity",
+   "ref": "C2",
+   "pkg": "Tantalum_Case-A",
+   "x": 26.98,
+   "y": 40.95,
+   "expect": [
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "POLARITY"
+   ]
+  },
+  {
+   "type": "no_solder",
+   "ref": "C25",
+   "pkg": "0603",
+   "x": 36.88,
+   "y": 44.97,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "excess",
+   "ref": "C27",
+   "pkg": "0402",
+   "x": 22.87,
+   "y": 46.01,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": false,
+   "codes": [
+    "MISSING"
+   ]
+  },
+  {
+   "type": "marking",
+   "ref": "U5",
+   "pkg": "TSSOP-20",
+   "x": 40.0,
+   "y": 36.08,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "D6",
+   "package": "LED_0805",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 65
+}

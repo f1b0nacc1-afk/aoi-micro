@@ -1,0 +1,70 @@
+{
+ "gt": [],
+ "false_parts": [
+  {
+   "ref": "U3",
+   "package": "SOIC-8",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R1",
+   "package": "0603",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R2",
+   "package": "1206",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R3",
+   "package": "1206",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R4",
+   "package": "1206",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "C8",
+   "package": "CP_Elec_5x5.8",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "C9",
+   "package": "0603",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R10",
+   "package": "1206",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R11",
+   "package": "0805",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 50
+}

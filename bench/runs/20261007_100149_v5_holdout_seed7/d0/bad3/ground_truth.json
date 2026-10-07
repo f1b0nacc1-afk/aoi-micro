@@ -1,0 +1,103 @@
+{
+ "gt": [
+  {
+   "type": "wrong",
+   "ref": "R11",
+   "pkg": "0805",
+   "x": 18.02,
+   "y": 22.07,
+   "expect": [
+    "MISMATCH",
+    "MISSING",
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "shift",
+   "ref": "C26",
+   "pkg": "0805",
+   "x": 4.53,
+   "y": 33.52,
+   "expect": [
+    "SHIFT"
+   ],
+   "detected": true,
+   "classified": false,
+   "codes": [
+    "MISSING"
+   ]
+  },
+  {
+   "type": "excess",
+   "ref": "R6",
+   "pkg": "0805",
+   "x": 37.22,
+   "y": 35.98,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": false,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "excess",
+   "ref": "R1",
+   "pkg": "0402",
+   "x": 52.05,
+   "y": 44.75,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "rotate",
+   "ref": "C23",
+   "pkg": "0402",
+   "x": 44.28,
+   "y": 11.2,
+   "expect": [
+    "ROTATED"
+   ],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "billboard",
+   "ref": "R17",
+   "pkg": "0603",
+   "x": 16.36,
+   "y": 5.45,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISSING"
+   ]
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "D1",
+   "package": "SOD-123",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 60
+}

@@ -1,0 +1,105 @@
+{
+ "gt": [
+  {
+   "type": "tombstone",
+   "ref": "R18",
+   "pkg": "0805",
+   "x": 9.97,
+   "y": 46.48,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "marking",
+   "ref": "U2",
+   "pkg": "QFN-32",
+   "x": 71.72,
+   "y": 29.15,
+   "expect": [],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "damaged",
+   "ref": "R2",
+   "pkg": "1206",
+   "x": 31.38,
+   "y": 46.4,
+   "expect": [
+    "MISMATCH",
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "excess",
+   "ref": "R16",
+   "pkg": "0805",
+   "x": 25.66,
+   "y": 21.71,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY",
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "rot90",
+   "ref": "U1",
+   "pkg": "LQFP-48",
+   "x": 22.03,
+   "y": 42.35,
+   "expect": [
+    "POLARITY",
+    "ROTATED"
+   ],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "polarity",
+   "ref": "D7",
+   "pkg": "LED_0805",
+   "x": 61.1,
+   "y": 5.53,
+   "expect": [
+    "POLARITY"
+   ],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "L1",
+   "package": "L_4x4",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "D8",
+   "package": "LED_0805",
+   "defects": [
+    "POLARITY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 72
+}

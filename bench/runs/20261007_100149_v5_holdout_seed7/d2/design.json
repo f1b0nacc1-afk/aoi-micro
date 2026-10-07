@@ -1,0 +1,783 @@
+{
+ "name": "d2",
+ "W": 70,
+ "H": 50,
+ "finish": "HASL",
+ "mask_level": 54.60299492101508,
+ "c_body": 115.69414184140362,
+ "fiducials": [
+  {
+   "x_mm": 66.5,
+   "y_mm": 3.5
+  },
+  {
+   "x_mm": 66.5,
+   "y_mm": 46.5
+  },
+  {
+   "x_mm": 3.5,
+   "y_mm": 46.5
+  }
+ ],
+ "parts": [
+  {
+   "ref": "U1",
+   "pkg": "LQFP-48",
+   "footprint": "LQFP-48_7x7mm_P0.5mm",
+   "x": 40.4,
+   "y": 8.77,
+   "rot": 0.0,
+   "kind": "U",
+   "value": "RP2040",
+   "marks": [
+    "RP2040",
+    "RP2040"
+   ]
+  },
+  {
+   "ref": "U2",
+   "pkg": "QFN-32",
+   "footprint": "QFN-32-1EP_5x5mm_P0.5mm",
+   "x": 25.97,
+   "y": 15.51,
+   "rot": 270.0,
+   "kind": "U",
+   "value": "CH340",
+   "marks": [
+    "CH340",
+    "CH340"
+   ]
+  },
+  {
+   "ref": "U3",
+   "pkg": "SOIC-8",
+   "footprint": "SOIC-8_3.9x4.9mm_P1.27mm",
+   "x": 41.27,
+   "y": 26.59,
+   "rot": 180.0,
+   "kind": "U",
+   "value": "24C02",
+   "marks": [
+    "24C02",
+    "24C02"
+   ]
+  },
+  {
+   "ref": "U4",
+   "pkg": "TSSOP-20",
+   "footprint": "TSSOP-20_4.4x6.5mm_P0.65mm",
+   "x": 15.25,
+   "y": 32.93,
+   "rot": 0.0,
+   "kind": "U",
+   "value": "STM32F030",
+   "marks": [
+    "STM32F030",
+    "STM32F030"
+   ]
+  },
+  {
+   "ref": "C1",
+   "pkg": "CP_Elec_5x5.8",
+   "footprint": "CP_Elec_5x5.8",
+   "x": 53.75,
+   "y": 32.0,
+   "rot": 0.0,
+   "kind": "C",
+   "value": "47u"
+  },
+  {
+   "ref": "Q1",
+   "pkg": "SOT-23",
+   "footprint": "SOT-23",
+   "x": 54.24,
+   "y": 24.73,
+   "rot": 180.0,
+   "kind": "Q",
+   "value": "A7",
+   "marks": [
+    "A7",
+    "A7"
+   ]
+  },
+  {
+   "ref": "D1",
+   "pkg": "SOD-123",
+   "footprint": "D_SOD-123",
+   "x": 56.54,
+   "y": 11.51,
+   "rot": 270.0,
+   "kind": "D",
+   "value": "SOD-123"
+  },
+  {
+   "ref": "C2",
+   "pkg": "Tantalum_Case-A",
+   "footprint": "CP_Tantalum_Case-A_EIA-3216-18",
+   "x": 26.98,
+   "y": 40.95,
+   "rot": 0.0,
+   "kind": "C",
+   "value": "Tantalum_Case-A"
+  },
+  {
+   "ref": "D2",
+   "pkg": "LED_0805",
+   "footprint": "LED_0805_2012Metric",
+   "x": 41.9,
+   "y": 44.9,
+   "rot": 0.0,
+   "kind": "D",
+   "value": "LED_0805"
+  },
+  {
+   "ref": "U5",
+   "pkg": "TSSOP-20",
+   "footprint": "TSSOP-20_4.4x6.5mm_P0.65mm",
+   "x": 40.0,
+   "y": 36.08,
+   "rot": 0.0,
+   "kind": "U",
+   "value": "PCA9685",
+   "marks": [
+    "PCA9685",
+    "PCA9685"
+   ]
+  },
+  {
+   "ref": "R1",
+   "pkg": "1206",
+   "footprint": "R_1206_3216Metric",
+   "x": 22.03,
+   "y": 27.08,
+   "rot": 90.0,
+   "kind": "R",
+   "value": "220",
+   "marks": [
+    "221",
+    "2200"
+   ]
+  },
+  {
+   "ref": "C3",
+   "pkg": "0402",
+   "footprint": "C_0402_1005Metric",
+   "x": 47.38,
+   "y": 33.31,
+   "rot": 0.0,
+   "kind": "C",
+   "value": "10n"
+  },
+  {
+   "ref": "C4",
+   "pkg": "0805",
+   "footprint": "C_0805_2012Metric",
+   "x": 65.02,
+   "y": 13.2,
+   "rot": 270.0,
+   "kind": "C",
+   "value": "4u7"
+  },
+  {
+   "ref": "R2",
+   "pkg": "1206",
+   "footprint": "R_1206_3216Metric",
+   "x": 30.49,
+   "y": 7.13,
+   "rot": 90.0,
+   "kind": "R",
+   "value": "0R",
+   "marks": [
+    "000",
+    "0"
+   ]
+  },
+  {
+   "ref": "Q2",
+   "pkg": "SOT-23",
+   "footprint": "SOT-23",
+   "x": 7.74,
+   "y": 36.08,
+   "rot": 180.0,
+   "kind": "Q",
+   "value": "A7",
+   "marks": [
+    "A7",
+    "A7"
+   ]
+  },
+  {
+   "ref": "C5",
+   "pkg": "0805",
+   "footprint": "C_0805_2012Metric",
+   "x": 16.17,
+   "y": 24.18,
+   "rot": 0.0,
+   "kind": "C",
+   "value": "10u"
+  },
+  {
+   "ref": "U6",
+   "pkg": "SOT-223",
+   "footprint": "SOT-223-3_TabPin2",
+   "x": 61.61,
+   "y": 21.28,
+   "rot": 0.0,
+   "kind": "U",
+   "value": "LD1117",
+   "marks": [
+    "LD1117",
+    "LD1117"
+   ]
+  },
+  {
+   "ref": "C6",
+   "pkg": "0603",
+   "footprint": "C_0603_1608Metric",
+   "x": 24.14,
+   "y": 35.33,
+   "rot": 90.0,
+   "kind": "C",
+   "value": "10u"
+  },
+  {
+   "ref": "R3",
+   "pkg": "0402",
+   "footprint": "R_0402_1005Metric",
+   "x": 7.5,
+   "y": 16.93,
+   "rot": 90.0,
+   "kind": "R",
+   "value": "10k",
+   "marks": [
+    "103",
+    "1002"
+   ]
+  },
+  {
+   "ref": "C7",
+   "pkg": "0402",
+   "footprint": "C_0402_1005Metric",
+   "x": 15.18,
+   "y": 11.04,
+   "rot": 90.0,
+   "kind": "C",
+   "value": "10u"
+  },
+  {
+   "ref": "R4",
+   "pkg": "0402",
+   "footprint": "R_0402_1005Metric",
+   "x": 59.37,
+   "y": 39.66,
+   "rot": 180.0,
+   "kind": "R",
+   "value": "1k",
+   "marks": [
+    "102",
+    "1001"
+   ]
+  },
+  {
+   "ref": "U7",
+   "pkg": "SOT-223",
+   "footprint": "SOT-223-3_TabPin2",
+   "x": 49.55,
+   "y": 41.18,
+   "rot": 0.0,
+   "kind": "U",
+   "value": "AMS1117",
+   "marks": [
+    "AMS1117",
+    "AMS1117"
+   ]
+  },
+  {
+   "ref": "R5",
+   "pkg": "0603",
+   "footprint": "R_0603_1608Metric",
+   "x": 48.75,
+   "y": 16.76,
+   "rot": 90.0,
+   "kind": "R",
+   "value": "1k",
+   "marks": [
+    "102",
+    "1001"
+   ]
+  },
+  {
+   "ref": "D3",
+   "pkg": "SOD-123",
+   "footprint": "D_SOD-123",
+   "x": 38.75,
+   "y": 17.66,
+   "rot": 0.0,
+   "kind": "D",
+   "value": "SOD-123"
+  },
+  {
+   "ref": "R6",
+   "pkg": "0402",
+   "footprint": "R_0402_1005Metric",
+   "x": 60.95,
+   "y": 28.88,
+   "rot": 90.0,
+   "kind": "R",
+   "value": "100k",
+   "marks": [
+    "104",
+    "1003"
+   ]
+  },
+  {
+   "ref": "C8",
+   "pkg": "0603",
+   "footprint": "C_0603_1608Metric",
+   "x": 11.81,
+   "y": 11.4,
+   "rot": 270.0,
+   "kind": "C",
+   "value": "4u7"
+  },
+  {
+   "ref": "C9",
+   "pkg": "0603",
+   "footprint": "C_0603_1608Metric",
+   "x": 8.93,
+   "y": 23.92,
+   "rot": 180.0,
+   "kind": "C",
+   "value": "10u"
+  },
+  {
+   "ref": "D4",
+   "pkg": "LED_0805",
+   "footprint": "LED_0805_2012Metric",
+   "x": 6.49,
+   "y": 9.55,
+   "rot": 270.0,
+   "kind": "D",
+   "value": "LED_0805"
+  },
+  {
+   "ref": "C10",
+   "pkg": "1206",
+   "footprint": "C_1206_3216Metric",
+   "x": 51.08,
+   "y": 11.21,
+   "rot": 0.0,
+   "kind": "C",
+   "value": "100n"
+  },
+  {
+   "ref": "D5",
+   "pkg": "SOD-123",
+   "footprint": "D_SOD-123",
+   "x": 29.28,
+   "y": 30.65,
+   "rot": 90.0,
+   "kind": "D",
+   "value": "SOD-123"
+  },
+  {
+   "ref": "C11",
+   "pkg": "0603",
+   "footprint": "C_0603_1608Metric",
+   "x": 21.92,
+   "y": 22.01,
+   "rot": 0.0,
+   "kind": "C",
+   "value": "1u"
+  },
+  {
+   "ref": "R7",
+   "pkg": "1206",
+   "footprint": "R_1206_3216Metric",
+   "x": 18.85,
+   "y": 44.08,
+   "rot": 270.0,
+   "kind": "R",
+   "value": "220",
+   "marks": [
+    "221",
+    "2200"
+   ]
+  },
+  {
+   "ref": "C12",
+   "pkg": "Tantalum_Case-A",
+   "footprint": "CP_Tantalum_Case-A_EIA-3216-18",
+   "x": 28.27,
+   "y": 23.19,
+   "rot": 270.0,
+   "kind": "C",
+   "value": "Tantalum_Case-A"
+  },
+  {
+   "ref": "C13",
+   "pkg": "0603",
+   "footprint": "C_0603_1608Metric",
+   "x": 19.45,
+   "y": 12.79,
+   "rot": 90.0,
+   "kind": "C",
+   "value": "4u7"
+  },
+  {
+   "ref": "R8",
+   "pkg": "0805",
+   "footprint": "R_0805_2012Metric",
+   "x": 32.1,
+   "y": 15.45,
+   "rot": 270.0,
+   "kind": "R",
+   "value": "0R",
+   "marks": [
+    "000",
+    "0"
+   ]
+  },
+  {
+   "ref": "C14",
+   "pkg": "0805",
+   "footprint": "C_0805_2012Metric",
+   "x": 26.14,
+   "y": 7.69,
+   "rot": 90.0,
+   "kind": "C",
+   "value": "10u"
+  },
+  {
+   "ref": "R9",
+   "pkg": "0805",
+   "footprint": "R_0805_2012Metric",
+   "x": 16.7,
+   "y": 19.92,
+   "rot": 0.0,
+   "kind": "R",
+   "value": "1k",
+   "marks": [
+    "102",
+    "1001"
+   ]
+  },
+  {
+   "ref": "C15",
+   "pkg": "Tantalum_Case-A",
+   "footprint": "CP_Tantalum_Case-A_EIA-3216-18",
+   "x": 63.74,
+   "y": 37.04,
+   "rot": 270.0,
+   "kind": "C",
+   "value": "Tantalum_Case-A"
+  },
+  {
+   "ref": "Q3",
+   "pkg": "SOT-23",
+   "footprint": "SOT-23",
+   "x": 33.93,
+   "y": 22.64,
+   "rot": 0.0,
+   "kind": "Q",
+   "value": "W1",
+   "marks": [
+    "W1",
+    "W1"
+   ]
+  },
+  {
+   "ref": "C16",
+   "pkg": "0402",
+   "footprint": "C_0402_1005Metric",
+   "x": 47.19,
+   "y": 28.06,
+   "rot": 180.0,
+   "kind": "C",
+   "value": "10u"
+  },
+  {
+   "ref": "C17",
+   "pkg": "CP_Elec_5x5.8",
+   "footprint": "CP_Elec_5x5.8",
+   "x": 12.06,
+   "y": 43.08,
+   "rot": 270.0,
+   "kind": "C",
+   "value": "220u"
+  },
+  {
+   "ref": "D6",
+   "pkg": "LED_0805",
+   "footprint": "LED_0805_2012Metric",
+   "x": 33.05,
+   "y": 30.84,
+   "rot": 90.0,
+   "kind": "D",
+   "value": "LED_0805"
+  },
+  {
+   "ref": "Q4",
+   "pkg": "SOT-23",
+   "footprint": "SOT-23",
+   "x": 53.15,
+   "y": 19.17,
+   "rot": 270.0,
+   "kind": "Q",
+   "value": "A7",
+   "marks": [
+    "A7",
+    "A7"
+   ]
+  },
+  {
+   "ref": "R10",
+   "pkg": "0603",
+   "footprint": "R_0603_1608Metric",
+   "x": 5.96,
+   "y": 5.27,
+   "rot": 180.0,
+   "kind": "R",
+   "value": "10k",
+   "marks": [
+    "103",
+    "1002"
+   ]
+  },
+  {
+   "ref": "R11",
+   "pkg": "0805",
+   "footprint": "R_0805_2012Metric",
+   "x": 28.9,
+   "y": 45.34,
+   "rot": 0.0,
+   "kind": "R",
+   "value": "220",
+   "marks": [
+    "221",
+    "2200"
+   ]
+  },
+  {
+   "ref": "C18",
+   "pkg": "0402",
+   "footprint": "C_0402_1005Metric",
+   "x": 64.82,
+   "y": 31.67,
+   "rot": 180.0,
+   "kind": "C",
+   "value": "4u7"
+  },
+  {
+   "ref": "Q5",
+   "pkg": "SOT-23",
+   "footprint": "SOT-23",
+   "x": 15.95,
+   "y": 5.74,
+   "rot": 180.0,
+   "kind": "Q",
+   "value": "J3Y",
+   "marks": [
+    "J3Y",
+    "J3Y"
+   ]
+  },
+  {
+   "ref": "L1",
+   "pkg": "L_4x4",
+   "footprint": "L_4x4mm_Shielded",
+   "x": 6.72,
+   "y": 29.13,
+   "rot": 180.0,
+   "kind": "L",
+   "value": "4u7",
+   "marks": [
+    "4R7",
+    "4R7"
+   ]
+  },
+  {
+   "ref": "C19",
+   "pkg": "0402",
+   "footprint": "C_0402_1005Metric",
+   "x": 11.62,
+   "y": 18.08,
+   "rot": 0.0,
+   "kind": "C",
+   "value": "1u"
+  },
+  {
+   "ref": "C20",
+   "pkg": "1206",
+   "footprint": "C_1206_3216Metric",
+   "x": 21.4,
+   "y": 6.31,
+   "rot": 270.0,
+   "kind": "C",
+   "value": "1u"
+  },
+  {
+   "ref": "C21",
+   "pkg": "0603",
+   "footprint": "C_0603_1608Metric",
+   "x": 59.79,
+   "y": 44.36,
+   "rot": 270.0,
+   "kind": "C",
+   "value": "10u"
+  },
+  {
+   "ref": "C22",
+   "pkg": "0603",
+   "footprint": "C_0603_1608Metric",
+   "x": 33.02,
+   "y": 40.47,
+   "rot": 45.0,
+   "kind": "C",
+   "value": "10n"
+  },
+  {
+   "ref": "C23",
+   "pkg": "0805",
+   "footprint": "C_0805_2012Metric",
+   "x": 29.01,
+   "y": 35.8,
+   "rot": 180.0,
+   "kind": "C",
+   "value": "1u"
+  },
+  {
+   "ref": "C24",
+   "pkg": "0603",
+   "footprint": "C_0603_1608Metric",
+   "x": 54.73,
+   "y": 5.37,
+   "rot": 180.0,
+   "kind": "C",
+   "value": "22p"
+  },
+  {
+   "ref": "C25",
+   "pkg": "0603",
+   "footprint": "C_0603_1608Metric",
+   "x": 36.88,
+   "y": 44.97,
+   "rot": 180.0,
+   "kind": "C",
+   "value": "22p"
+  },
+  {
+   "ref": "D7",
+   "pkg": "SOD-123",
+   "footprint": "D_SOD-123",
+   "x": 60.63,
+   "y": 11.15,
+   "rot": 270.0,
+   "kind": "D",
+   "value": "SOD-123"
+  },
+  {
+   "ref": "R12",
+   "pkg": "0603",
+   "footprint": "R_0603_1608Metric",
+   "x": 43.61,
+   "y": 17.65,
+   "rot": 90.0,
+   "kind": "R",
+   "value": "4k7",
+   "marks": [
+    "472",
+    "4701"
+   ]
+  },
+  {
+   "ref": "R13",
+   "pkg": "0402",
+   "footprint": "R_0402_1005Metric",
+   "x": 56.15,
+   "y": 45.31,
+   "rot": 90.0,
+   "kind": "R",
+   "value": "1k",
+   "marks": [
+    "102",
+    "1001"
+   ]
+  },
+  {
+   "ref": "C26",
+   "pkg": "0603",
+   "footprint": "C_0603_1608Metric",
+   "x": 48.02,
+   "y": 23.92,
+   "rot": 0.0,
+   "kind": "C",
+   "value": "22p"
+  },
+  {
+   "ref": "C27",
+   "pkg": "0402",
+   "footprint": "C_0402_1005Metric",
+   "x": 23.44,
+   "y": 46.01,
+   "rot": 0.0,
+   "kind": "C",
+   "value": "4u7"
+  },
+  {
+   "ref": "C28",
+   "pkg": "0402",
+   "footprint": "C_0402_1005Metric",
+   "x": 55.72,
+   "y": 41.04,
+   "rot": 270.0,
+   "kind": "C",
+   "value": "100n"
+  },
+  {
+   "ref": "R14",
+   "pkg": "0603",
+   "footprint": "R_0603_1608Metric",
+   "x": 5.35,
+   "y": 20.61,
+   "rot": 0.0,
+   "kind": "R",
+   "value": "220",
+   "marks": [
+    "221",
+    "2200"
+   ]
+  },
+  {
+   "ref": "C29",
+   "pkg": "0402",
+   "footprint": "C_0402_1005Metric",
+   "x": 59.45,
+   "y": 35.12,
+   "rot": 90.0,
+   "kind": "C",
+   "value": "10u"
+  },
+  {
+   "ref": "C30",
+   "pkg": "0402",
+   "footprint": "C_0402_1005Metric",
+   "x": 60.48,
+   "y": 5.61,
+   "rot": 180.0,
+   "kind": "C",
+   "value": "10u"
+  },
+  {
+   "ref": "C31",
+   "pkg": "0402",
+   "footprint": "C_0402_1005Metric",
+   "x": 50.42,
+   "y": 7.03,
+   "rot": 90.0,
+   "kind": "C",
+   "value": "22p"
+  }
+ ],
+ "seed": 718550197
+}

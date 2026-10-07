@@ -1,0 +1,128 @@
+{
+ "gt": [
+  {
+   "type": "wrong",
+   "ref": "C22",
+   "pkg": "0603",
+   "x": 5.91,
+   "y": 16.18,
+   "expect": [
+    "MISMATCH",
+    "MISSING",
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "billboard",
+   "ref": "C14",
+   "pkg": "0805",
+   "x": 6.92,
+   "y": 41.24,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISSING"
+   ]
+  },
+  {
+   "type": "rot90",
+   "ref": "U9",
+   "pkg": "QFN-32",
+   "x": 8.51,
+   "y": 23.24,
+   "expect": [
+    "POLARITY",
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "POLARITY"
+   ]
+  },
+  {
+   "type": "marking",
+   "ref": "U3",
+   "pkg": "SOIC-8",
+   "x": 52.97,
+   "y": 35.92,
+   "expect": [],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "damaged",
+   "ref": "C11",
+   "pkg": "1206",
+   "x": 60.77,
+   "y": 35.14,
+   "expect": [
+    "MISMATCH",
+    "ANOMALY"
+   ],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "foreign",
+   "ref": null,
+   "x": 53.66,
+   "y": 44.65,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "U2",
+   "package": "QFN-32",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R2",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R7",
+   "package": "1206",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "C24",
+   "package": "0603",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R15",
+   "package": "0805",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 70
+}

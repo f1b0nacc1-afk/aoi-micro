@@ -1,0 +1,94 @@
+{
+ "gt": [
+  {
+   "type": "bridge",
+   "ref": "U7",
+   "pkg": "SOIC-8",
+   "x": 13.79,
+   "y": 26.08,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "marking",
+   "ref": "U5",
+   "pkg": "SOT-223",
+   "x": 52.56,
+   "y": 36.18,
+   "expect": [],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "missing",
+   "ref": "C25",
+   "pkg": "0603",
+   "x": 36.67,
+   "y": 31.23,
+   "expect": [
+    "MISSING",
+    "MISMATCH"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "rot90",
+   "ref": "U1",
+   "pkg": "LQFP-48",
+   "x": 27.59,
+   "y": 16.81,
+   "expect": [
+    "POLARITY",
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "POLARITY"
+   ]
+  },
+  {
+   "type": "damaged",
+   "ref": "C16",
+   "pkg": "0805",
+   "x": 32.16,
+   "y": 8.8,
+   "expect": [
+    "MISMATCH",
+    "ANOMALY"
+   ],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "ball",
+   "ref": "R2",
+   "pkg": "0805",
+   "x": 37.71,
+   "y": 6.31,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_parts": [],
+ "false_board": [],
+ "n_parts": 63
+}

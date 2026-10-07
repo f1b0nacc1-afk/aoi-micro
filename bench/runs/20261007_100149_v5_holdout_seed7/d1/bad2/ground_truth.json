@@ -1,0 +1,101 @@
+{
+ "gt": [
+  {
+   "type": "ball",
+   "ref": "R14",
+   "pkg": "0603",
+   "x": 54.42,
+   "y": 18.64,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "no_solder",
+   "ref": "C6",
+   "pkg": "0805",
+   "x": 63.2,
+   "y": 37.91,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "wrong",
+   "ref": "C9",
+   "pkg": "1206",
+   "x": 50.68,
+   "y": 26.02,
+   "expect": [
+    "MISMATCH",
+    "MISSING",
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "damaged",
+   "ref": "R3",
+   "pkg": "0805",
+   "x": 45.35,
+   "y": 16.52,
+   "expect": [
+    "MISMATCH",
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": false,
+   "codes": [
+    "MISSING"
+   ]
+  },
+  {
+   "type": "excess",
+   "ref": "Q1",
+   "pkg": "SOT-23",
+   "x": 58.53,
+   "y": 7.8,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "missing",
+   "ref": "C22",
+   "pkg": "0603",
+   "x": 21.41,
+   "y": 25.01,
+   "expect": [
+    "MISSING",
+    "MISMATCH"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISSING"
+   ]
+  }
+ ],
+ "false_parts": [],
+ "false_board": [],
+ "n_parts": 63
+}

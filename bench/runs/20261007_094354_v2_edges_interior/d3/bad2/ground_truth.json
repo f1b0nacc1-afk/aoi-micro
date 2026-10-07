@@ -1,0 +1,110 @@
+{
+ "gt": [
+  {
+   "type": "marking",
+   "ref": "U6",
+   "pkg": "QFN-32",
+   "x": 39.39,
+   "y": 35.56,
+   "expect": [],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "wrong",
+   "ref": "C12",
+   "pkg": "0805",
+   "x": 6.18,
+   "y": 14.0,
+   "expect": [
+    "MISMATCH",
+    "MISSING",
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "polarity",
+   "ref": "U2",
+   "pkg": "QFN-32",
+   "x": 49.64,
+   "y": 16.46,
+   "expect": [
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "POLARITY"
+   ]
+  },
+  {
+   "type": "ball",
+   "ref": "C3",
+   "pkg": "0805",
+   "x": 21.67,
+   "y": 9.22,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "missing",
+   "ref": "R13",
+   "pkg": "0603",
+   "x": 58.82,
+   "y": 32.32,
+   "expect": [
+    "MISSING",
+    "MISMATCH"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "foreign",
+   "ref": null,
+   "x": 43.95,
+   "y": 9.13,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "U3",
+   "package": "SOIC-8",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "C8",
+   "package": "CP_Elec_5x5.8",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 50
+}

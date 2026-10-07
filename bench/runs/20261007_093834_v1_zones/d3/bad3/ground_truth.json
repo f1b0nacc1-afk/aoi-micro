@@ -1,0 +1,100 @@
+{
+ "gt": [
+  {
+   "type": "tombstone",
+   "ref": "R10",
+   "pkg": "1206",
+   "x": 53.69,
+   "y": 8.88,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISSING"
+   ]
+  },
+  {
+   "type": "damaged",
+   "ref": "U6",
+   "pkg": "QFN-32",
+   "x": 39.39,
+   "y": 35.56,
+   "expect": [
+    "MISMATCH",
+    "ANOMALY"
+   ],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "no_solder",
+   "ref": "R16",
+   "pkg": "0805",
+   "x": 22.29,
+   "y": 40.89,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "rotate",
+   "ref": "C20",
+   "pkg": "0402",
+   "x": 44.97,
+   "y": 39.77,
+   "expect": [
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ROTATED"
+   ]
+  },
+  {
+   "type": "shift",
+   "ref": "R3",
+   "pkg": "1206",
+   "x": 6.31,
+   "y": 20.41,
+   "expect": [
+    "SHIFT"
+   ],
+   "detected": true,
+   "classified": false,
+   "codes": [
+    "MISSING"
+   ]
+  },
+  {
+   "type": "bridge",
+   "ref": "U1",
+   "pkg": "LQFP-48",
+   "x": 24.66,
+   "y": 16.54,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "C9",
+   "package": "0603",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 50
+}

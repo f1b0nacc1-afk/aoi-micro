@@ -1,0 +1,104 @@
+{
+ "gt": [
+  {
+   "type": "rot90",
+   "ref": "U5",
+   "pkg": "LQFP-48",
+   "x": 16.81,
+   "y": 36.99,
+   "expect": [
+    "POLARITY",
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "POLARITY"
+   ]
+  },
+  {
+   "type": "damaged",
+   "ref": "C3",
+   "pkg": "0805",
+   "x": 55.13,
+   "y": 16.01,
+   "expect": [
+    "MISMATCH",
+    "ANOMALY"
+   ],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "billboard",
+   "ref": "C14",
+   "pkg": "0805",
+   "x": 58.09,
+   "y": 10.86,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISSING"
+   ]
+  },
+  {
+   "type": "rotate",
+   "ref": "U4",
+   "pkg": "TSSOP-20",
+   "x": 40.0,
+   "y": 41.37,
+   "expect": [
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ROTATED"
+   ]
+  },
+  {
+   "type": "missing",
+   "ref": "C23",
+   "pkg": "0402",
+   "x": 35.29,
+   "y": 19.88,
+   "expect": [
+    "MISSING",
+    "MISMATCH"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "ball",
+   "ref": "C17",
+   "pkg": "0603",
+   "x": 20.71,
+   "y": 24.84,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "U2",
+   "package": "QFN-32",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 70
+}

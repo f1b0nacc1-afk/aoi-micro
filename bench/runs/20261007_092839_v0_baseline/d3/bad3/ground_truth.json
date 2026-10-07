@@ -1,0 +1,323 @@
+{
+ "gt": [
+  {
+   "type": "tombstone",
+   "ref": "R7",
+   "pkg": "0805",
+   "x": 46.19,
+   "y": 30.83,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "damaged",
+   "ref": "R4",
+   "pkg": "1206",
+   "x": 10.92,
+   "y": 16.11,
+   "expect": [
+    "MISMATCH",
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "no_solder",
+   "ref": "R1",
+   "pkg": "0603",
+   "x": 33.89,
+   "y": 5.37,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": false,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "rotate",
+   "ref": "D3",
+   "pkg": "SMA",
+   "x": 58.19,
+   "y": 14.24,
+   "expect": [
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY",
+    "ROTATED"
+   ]
+  },
+  {
+   "type": "shift",
+   "ref": "U3",
+   "pkg": "SOIC-8",
+   "x": 52.95,
+   "y": 30.53,
+   "expect": [
+    "SHIFT"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY",
+    "SHIFT"
+   ]
+  },
+  {
+   "type": "bridge",
+   "ref": "U4",
+   "pkg": "TSSOP-20",
+   "x": 39.8,
+   "y": 23.59,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "C2",
+   "package": "Tantalum_Case-A",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "U5",
+   "package": "SOIC-8",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R2",
+   "package": "1206",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C3",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R3",
+   "package": "1206",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C4",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C5",
+   "package": "0402",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C6",
+   "package": "0402",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R5",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C7",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R6",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C9",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C10",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R8",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R9",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R10",
+   "package": "1206",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C11",
+   "package": "Tantalum_Case-A",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C12",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R11",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C13",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C14",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C15",
+   "package": "0402",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R13",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C16",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R16",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C17",
+   "package": "0402",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R17",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C18",
+   "package": "0805",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C19",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "C20",
+   "package": "0402",
+   "defects": [
+    "MISMATCH"
+   ]
+  }
+ ],
+ "false_board": [
+  {
+   "x_mm": 53.56,
+   "y_mm": 25.16,
+   "w_mm": 0.51,
+   "h_mm": 1.58,
+   "area_mm2": 0.764,
+   "_box_px": [
+    2292.0,
+    862.0,
+    22.0,
+    68.0
+   ]
+  }
+ ],
+ "n_parts": 50
+}

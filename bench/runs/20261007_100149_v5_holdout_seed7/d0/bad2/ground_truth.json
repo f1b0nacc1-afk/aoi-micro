@@ -1,0 +1,95 @@
+{
+ "gt": [
+  {
+   "type": "no_solder",
+   "ref": "R1",
+   "pkg": "0402",
+   "x": 52.63,
+   "y": 44.75,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "ball",
+   "ref": "R16",
+   "pkg": "0805",
+   "x": 4.59,
+   "y": 40.46,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "missing",
+   "ref": "C23",
+   "pkg": "0402",
+   "x": 44.28,
+   "y": 11.2,
+   "expect": [
+    "MISSING",
+    "MISMATCH"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "damaged",
+   "ref": "C14",
+   "pkg": "0805",
+   "x": 47.87,
+   "y": 31.84,
+   "expect": [
+    "MISMATCH",
+    "ANOMALY"
+   ],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "tombstone",
+   "ref": "C25",
+   "pkg": "0402",
+   "x": 35.31,
+   "y": 26.79,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "bridge",
+   "ref": "U2",
+   "pkg": "QFN-32",
+   "x": 28.45,
+   "y": 40.52,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_parts": [],
+ "false_board": [],
+ "n_parts": 60
+}

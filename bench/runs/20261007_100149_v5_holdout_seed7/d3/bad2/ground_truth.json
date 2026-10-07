@@ -1,0 +1,93 @@
+{
+ "gt": [
+  {
+   "type": "rotate",
+   "ref": "R16",
+   "pkg": "0603",
+   "x": 54.24,
+   "y": 32.91,
+   "expect": [
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ROTATED"
+   ]
+  },
+  {
+   "type": "marking",
+   "ref": "U5",
+   "pkg": "LQFP-48",
+   "x": 16.81,
+   "y": 36.99,
+   "expect": [],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "ball",
+   "ref": "R22",
+   "pkg": "0603",
+   "x": 46.69,
+   "y": 22.18,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "rot90",
+   "ref": "U1",
+   "pkg": "LQFP-48",
+   "x": 19.82,
+   "y": 15.89,
+   "expect": [
+    "POLARITY",
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "POLARITY"
+   ]
+  },
+  {
+   "type": "billboard",
+   "ref": "C16",
+   "pkg": "0603",
+   "x": 25.84,
+   "y": 39.67,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISSING"
+   ]
+  },
+  {
+   "type": "missing",
+   "ref": "R6",
+   "pkg": "0402",
+   "x": 53.96,
+   "y": 5.85,
+   "expect": [
+    "MISSING",
+    "MISMATCH"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  }
+ ],
+ "false_parts": [],
+ "false_board": [],
+ "n_parts": 70
+}

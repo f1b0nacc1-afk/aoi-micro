@@ -1,0 +1,123 @@
+{
+ "gt": [
+  {
+   "type": "shift",
+   "ref": "C1",
+   "pkg": "CP_Elec_5x5.8",
+   "x": 53.65,
+   "y": 10.57,
+   "expect": [
+    "SHIFT"
+   ],
+   "detected": true,
+   "classified": false,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "rotate",
+   "ref": "R4",
+   "pkg": "0805",
+   "x": 48.59,
+   "y": 46.56,
+   "expect": [
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ROTATED"
+   ]
+  },
+  {
+   "type": "missing",
+   "ref": "Y2",
+   "pkg": "Crystal_SMD_3225",
+   "x": 55.04,
+   "y": 21.7,
+   "expect": [
+    "MISSING",
+    "MISMATCH"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISSING"
+   ]
+  },
+  {
+   "type": "excess",
+   "ref": "U1",
+   "pkg": "LQFP-48",
+   "x": 36.14,
+   "y": 37.74,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "tombstone",
+   "ref": "C10",
+   "pkg": "0603",
+   "x": 49.69,
+   "y": 28.41,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "bridge",
+   "ref": "U9",
+   "pkg": "QFN-32",
+   "x": 9.01,
+   "y": 20.79,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": false,
+   "codes": [
+    "MISSING"
+   ]
+  }
+ ],
+ "false_parts": [],
+ "false_board": [
+  {
+   "x_mm": 53.88,
+   "y_mm": 15.24,
+   "w_mm": 6.47,
+   "h_mm": 3.56,
+   "area_mm2": 17.623,
+   "_box_px": [
+    2178.0,
+    1504.0,
+    278.0,
+    153.0
+   ]
+  },
+  {
+   "x_mm": 56.84,
+   "y_mm": 15.84,
+   "w_mm": 0.56,
+   "h_mm": 1.26,
+   "area_mm2": 0.196,
+   "_box_px": [
+    2432.0,
+    1528.0,
+    24.0,
+    54.0
+   ]
+  }
+ ],
+ "n_parts": 70
+}

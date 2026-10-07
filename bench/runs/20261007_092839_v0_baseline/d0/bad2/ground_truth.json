@@ -1,0 +1,102 @@
+{
+ "gt": [
+  {
+   "type": "no_solder",
+   "ref": "R5",
+   "pkg": "0402",
+   "x": 43.24,
+   "y": 27.78,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "damaged",
+   "ref": "C19",
+   "pkg": "1206",
+   "x": 9.21,
+   "y": 14.75,
+   "expect": [
+    "MISMATCH",
+    "ANOMALY"
+   ],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "rot90",
+   "ref": "U2",
+   "pkg": "QFN-32",
+   "x": 43.31,
+   "y": 10.23,
+   "expect": [
+    "POLARITY",
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": false,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "rotate",
+   "ref": "R13",
+   "pkg": "0603",
+   "x": 47.01,
+   "y": 30.17,
+   "expect": [
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY",
+    "ROTATED"
+   ]
+  },
+  {
+   "type": "excess",
+   "ref": "C9",
+   "pkg": "0805",
+   "x": 15.17,
+   "y": 9.41,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY",
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "foreign",
+   "ref": null,
+   "x": 11.36,
+   "y": 20.02,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "D5",
+   "package": "LED_0805",
+   "defects": [
+    "POLARITY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 61
+}

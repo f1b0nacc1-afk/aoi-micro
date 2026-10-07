@@ -1,0 +1,99 @@
+{
+ "gt": [
+  {
+   "type": "tombstone",
+   "ref": "R17",
+   "pkg": "1206",
+   "x": 18.86,
+   "y": 6.51,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISSING"
+   ]
+  },
+  {
+   "type": "marking",
+   "ref": "U9",
+   "pkg": "SOT-223",
+   "x": 36.46,
+   "y": 36.32,
+   "expect": [],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "damaged",
+   "ref": "C6",
+   "pkg": "0805",
+   "x": 23.82,
+   "y": 6.6,
+   "expect": [
+    "MISMATCH",
+    "ANOMALY"
+   ],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "excess",
+   "ref": "U6",
+   "pkg": "TQFP-32",
+   "x": 38.28,
+   "y": 20.9,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "rot90",
+   "ref": "U1",
+   "pkg": "LQFP-48",
+   "x": 22.03,
+   "y": 42.35,
+   "expect": [
+    "POLARITY",
+    "ROTATED"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "POLARITY"
+   ]
+  },
+  {
+   "type": "polarity",
+   "ref": "D2",
+   "pkg": "SOD-123",
+   "x": 57.83,
+   "y": 18.49,
+   "expect": [
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "POLARITY"
+   ]
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "C13",
+   "package": "1206",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 72
+}

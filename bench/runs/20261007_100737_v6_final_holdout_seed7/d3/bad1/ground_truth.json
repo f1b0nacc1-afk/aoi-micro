@@ -1,0 +1,107 @@
+{
+ "gt": [
+  {
+   "type": "shift",
+   "ref": "R17",
+   "pkg": "1206",
+   "x": 71.16,
+   "y": 11.61,
+   "expect": [
+    "SHIFT"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "SHIFT"
+   ]
+  },
+  {
+   "type": "bridge",
+   "ref": "U2",
+   "pkg": "QFN-32",
+   "x": 32.33,
+   "y": 7.29,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "wrong",
+   "ref": "D5",
+   "pkg": "SOD-123",
+   "x": 6.17,
+   "y": 23.9,
+   "expect": [
+    "MISMATCH",
+    "MISSING",
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": false,
+   "codes": [
+    "SHIFT"
+   ]
+  },
+  {
+   "type": "bridge",
+   "ref": "U3",
+   "pkg": "SOIC-8",
+   "x": 49.81,
+   "y": 31.99,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "no_solder",
+   "ref": "U6",
+   "pkg": "SOIC-16",
+   "x": 43.35,
+   "y": 7.73,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "wrong",
+   "ref": "R10",
+   "pkg": "0603",
+   "x": 24.06,
+   "y": 26.98,
+   "expect": [
+    "MISMATCH",
+    "MISSING",
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "C24",
+   "package": "0402",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 70
+}

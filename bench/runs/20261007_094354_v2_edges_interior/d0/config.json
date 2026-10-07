@@ -1,0 +1,57 @@
+{
+  "camera": {
+    "backend": "file"
+  },
+  "optics": {
+    "focal_mm": 12.0,
+    "wd_mm": 127.0
+  },
+  "board": {
+    "width_mm": 70,
+    "height_mm": 50,
+    "cad_y_up": true,
+    "cad_rot_ccw": true,
+    "px_per_mm": 43.0,
+    "raw_px_per_mm": 43.0,
+    "fiducials": [
+      {
+        "x_mm": 3.5,
+        "y_mm": 3.5,
+        "approx_px": [
+          408,
+          2258
+        ]
+      },
+      {
+        "x_mm": 66.5,
+        "y_mm": 3.5,
+        "approx_px": [
+          3118,
+          2258
+        ]
+      },
+      {
+        "x_mm": 66.5,
+        "y_mm": 46.5,
+        "approx_px": [
+          3118,
+          408
+        ]
+      },
+      {
+        "x_mm": 3.5,
+        "y_mm": 46.5,
+        "approx_px": [
+          408,
+          408
+        ]
+      }
+    ],
+    "fiducial_diameter_mm": 1.0,
+    "fiducial_search_mm": 4.0
+  },
+  "files": {
+    "centroid": "centroid.csv"
+  },
+  "inspect": {}
+}

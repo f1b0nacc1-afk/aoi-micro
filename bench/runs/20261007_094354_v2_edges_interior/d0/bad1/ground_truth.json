@@ -1,0 +1,118 @@
+{
+ "gt": [
+  {
+   "type": "marking",
+   "ref": "U1",
+   "pkg": "LQFP-48",
+   "x": 30.44,
+   "y": 31.35,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "bridge",
+   "ref": "U2",
+   "pkg": "QFN-32",
+   "x": 45.76,
+   "y": 10.23,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "missing",
+   "ref": "C19",
+   "pkg": "1206",
+   "x": 9.21,
+   "y": 14.75,
+   "expect": [
+    "MISSING",
+    "MISMATCH"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "wrong",
+   "ref": "C12",
+   "pkg": "0603",
+   "x": 54.21,
+   "y": 39.17,
+   "expect": [
+    "MISMATCH",
+    "MISSING",
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "ball",
+   "ref": "U3",
+   "pkg": "SOIC-8",
+   "x": 51.34,
+   "y": 25.49,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "billboard",
+   "ref": "R15",
+   "pkg": "0805",
+   "x": 31.43,
+   "y": 45.65,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "R9",
+   "package": "1206",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R13",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R17",
+   "package": "0603",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 61
+}

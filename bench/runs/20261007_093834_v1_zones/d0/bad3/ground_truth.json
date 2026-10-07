@@ -1,0 +1,94 @@
+{
+ "gt": [
+  {
+   "type": "shift",
+   "ref": "D2",
+   "pkg": "LED_0805",
+   "x": 65.31,
+   "y": 25.21,
+   "expect": [
+    "SHIFT"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "SHIFT"
+   ]
+  },
+  {
+   "type": "polarity",
+   "ref": "D1",
+   "pkg": "SOD-123",
+   "x": 36.2,
+   "y": 11.08,
+   "expect": [
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "POLARITY"
+   ]
+  },
+  {
+   "type": "tombstone",
+   "ref": "C18",
+   "pkg": "0603",
+   "x": 47.3,
+   "y": 23.8,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "billboard",
+   "ref": "C23",
+   "pkg": "0603",
+   "x": 38.82,
+   "y": 27.59,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISSING"
+   ]
+  },
+  {
+   "type": "excess",
+   "ref": "R12",
+   "pkg": "0805",
+   "x": 16.82,
+   "y": 39.94,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY",
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "ball",
+   "ref": "Y1",
+   "pkg": "Crystal_SMD_3225",
+   "x": 5.52,
+   "y": 26.63,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_parts": [],
+ "false_board": [],
+ "n_parts": 61
+}

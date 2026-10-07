@@ -1,0 +1,110 @@
+{
+ "gt": [
+  {
+   "type": "foreign",
+   "ref": null,
+   "x": 43.01,
+   "y": 26.45,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "shift",
+   "ref": "R4",
+   "pkg": "0603",
+   "x": 57.88,
+   "y": 33.76,
+   "expect": [
+    "SHIFT"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "SHIFT"
+   ]
+  },
+  {
+   "type": "damaged",
+   "ref": "U1",
+   "pkg": "LQFP-48",
+   "x": 19.82,
+   "y": 15.89,
+   "expect": [
+    "MISMATCH",
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "tombstone",
+   "ref": "R16",
+   "pkg": "0603",
+   "x": 54.24,
+   "y": 32.91,
+   "expect": [],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "excess",
+   "ref": "C5",
+   "pkg": "0805",
+   "x": 59.54,
+   "y": 40.35,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": false,
+   "codes": [
+    "MISSING"
+   ]
+  },
+  {
+   "type": "polarity",
+   "ref": "U6",
+   "pkg": "SOIC-16",
+   "x": 43.35,
+   "y": 7.73,
+   "expect": [
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "POLARITY"
+   ]
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "C2",
+   "package": "Tantalum_Case-A",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R5",
+   "package": "0402",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 70
+}

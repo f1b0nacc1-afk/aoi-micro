@@ -1,0 +1,112 @@
+{
+ "gt": [
+  {
+   "type": "damaged",
+   "ref": "C7",
+   "pkg": "0805",
+   "x": 12.27,
+   "y": 8.49,
+   "expect": [
+    "MISMATCH",
+    "ANOMALY"
+   ],
+   "detected": false,
+   "classified": false,
+   "codes": []
+  },
+  {
+   "type": "bridge",
+   "ref": "U1",
+   "pkg": "LQFP-48",
+   "x": 24.66,
+   "y": 19.04,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "ball",
+   "ref": "D5",
+   "pkg": "LED_0805",
+   "x": 41.93,
+   "y": 42.07,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "missing",
+   "ref": "D4",
+   "pkg": "SOD-123",
+   "x": 31.15,
+   "y": 24.02,
+   "expect": [
+    "MISSING",
+    "MISMATCH"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "type": "no_solder",
+   "ref": "R3",
+   "pkg": "1206",
+   "x": 6.31,
+   "y": 20.41,
+   "expect": [
+    "ANOMALY"
+   ],
+   "detected": true,
+   "classified": true,
+   "codes": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "type": "polarity",
+   "ref": "C2",
+   "pkg": "Tantalum_Case-A",
+   "x": 28.84,
+   "y": 41.49,
+   "expect": [
+    "POLARITY"
+   ],
+   "detected": true,
+   "classified": false,
+   "codes": [
+    "MISSING"
+   ]
+  }
+ ],
+ "false_parts": [
+  {
+   "ref": "U3",
+   "package": "SOIC-8",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "C14",
+   "package": "0805",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 50
+}

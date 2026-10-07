@@ -1,0 +1,21 @@
+{
+ "gt": [],
+ "false_parts": [
+  {
+   "ref": "U4",
+   "package": "TSSOP-20",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "C4",
+   "package": "0805",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 70
+}

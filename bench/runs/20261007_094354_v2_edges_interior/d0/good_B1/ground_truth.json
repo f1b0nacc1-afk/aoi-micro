@@ -1,0 +1,35 @@
+{
+ "gt": [],
+ "false_parts": [
+  {
+   "ref": "L1",
+   "package": "L_4x4",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R9",
+   "package": "1206",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R13",
+   "package": "0603",
+   "defects": [
+    "MISMATCH"
+   ]
+  },
+  {
+   "ref": "R17",
+   "package": "0603",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 61
+}

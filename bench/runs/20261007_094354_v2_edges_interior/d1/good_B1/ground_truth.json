@@ -1,0 +1,28 @@
+{
+ "gt": [],
+ "false_parts": [
+  {
+   "ref": "U1",
+   "package": "LQFP-48",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "U2",
+   "package": "QFN-32",
+   "defects": [
+    "ANOMALY"
+   ]
+  },
+  {
+   "ref": "R7",
+   "package": "1206",
+   "defects": [
+    "ANOMALY"
+   ]
+  }
+ ],
+ "false_board": [],
+ "n_parts": 70
+}
