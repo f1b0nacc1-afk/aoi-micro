@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Basler acA5472-17um + Computar 12 mm F2.6 — отчёт</title>
+  <style>
+    :root {
+      --bg: #f4f1ea;
+      --bg-2: #fffdf8;
+      --ink: #1c1915;
+      --muted: #5c564c;
+      --line: #d9d1c3;
+      --accent: #1f5c4a;
+      --accent-2: #c45c26;
+      --ok: #1f5c4a;
+      --warn: #9a6b12;
+      --bad: #9a2f2f;
+      --info: #2b4c7e;
+      --chip: #ece6d9;
+      --shadow: 0 0 0 1px var(--line);
+      --radius: 10px;
+      --mono: "IBM Plex Mono", "SF Mono", ui-monospace, Menlo, monospace;
+      --sans: "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+      --ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #161411;
+        --bg-2: #1e1b17;
+        --ink: #f3eee6;
+        --muted: #b3aa9c;
+        --line: #3a342c;
+        --accent: #7dbaa4;
+        --accent-2: #e08a55;
+        --ok: #7dbaa4;
+        --warn: #e0b35a;
+        --bad: #e07a7a;
+        --info: #8aa8d6;
+        --chip: #2a261f;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--ui);
+      font-size: 16px;
+      line-height: 1.55;
+    }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 28px 20px 80px; }
+    header.hero {
+      background: var(--bg-2);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 28px 28px 22px;
+      margin-bottom: 22px;
+    }
+    .kicker {
+      font-family: var(--ui);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 8px;
+    }
+    h1 {
+      font-family: var(--sans);
+      font-size: 32px;
+      line-height: 1.15;
+      font-weight: 600;
+      margin: 0 0 10px;
+    }
+    h2 {
+      font-family: var(--sans);
+      font-size: 24px;
+      margin: 36px 0 12px;
+      padding-top: 8px;
+    }
+    h3 {
+      font-family: var(--sans);
+      font-size: 18px;
+      margin: 20px 0 8px;
+    }
+    p { margin: 0 0 12px; }
+    .note { color: var(--muted); font-size: 13.5px; }
+    code {
+      font-family: var(--mono);
+      font-size: 0.92em;
+      background: var(--chip);
+      padding: 1px 5px;
+      border-radius: 4px;
+    }
+    nav.toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    nav.toc a {
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 13px;
+      background: var(--chip);
+      border: 1px solid var(--line);
+      padding: 5px 10px;
+      border-radius: 999px;
+    }
+    nav.toc a:hover { border-color: var(--accent); }
+    .verdict {
+      background: color-mix(in srgb, var(--ok) 12%, var(--bg-2));
+      border: 1px solid color-mix(in srgb, var(--ok) 40%, var(--line));
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      margin: 16px 0 20px;
+    }
+    .verdict strong { color: var(--ok); }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 16px 0 8px;
+    }
+    .stat {
+      background: var(--bg-2);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+    }
+    .stat b {
+      display: block;
+      font-family: var(--sans);
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.1;
+    }
+    .stat span { color: var(--muted); font-size: 12.5px; }
+    .stat.warn {
+      border-color: color-mix(in srgb, var(--warn) 55%, var(--line));
+      background: color-mix(in srgb, var(--warn) 10%, var(--bg-2));
+    }
+    .stat.warn b { color: var(--ink); }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--bg-2);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      font-size: 14px;
+      margin: 8px 0 12px;
+    }
+    th, td {
+      text-align: left;
+      padding: 8px 11px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+    th { font-size: 12px; color: var(--muted); font-weight: 600; }
+    tr:last-child td { border-bottom: 0; }
+    td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 7px; }
+    .ok { background: var(--ok); }
+    .warn { background: var(--warn); }
+    .bad { background: var(--bad); }
+    .info { background: var(--info); }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 14px; }
+    button.chip {
+      font: inherit;
+      font-size: 13px;
+      border: 1px solid var(--line);
+      background: var(--chip);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+    button.chip.active {
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+    }
+    .calc {
+      background: var(--bg-2);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      margin: 8px 0 18px;
+    }
+    .custom-wd {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin: 4px 0 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .custom-wd input {
+      width: 110px;
+      font: inherit;
+      padding: 6px 8px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--bg);
+      color: var(--ink);
+    }
+    .split-cover {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 18px;
+      align-items: center;
+    }
+    .chart {
+      background: var(--bg-2);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 10px 12px 6px;
+      margin: 8px 0 14px;
+    }
+    .chart svg { width: 100%; height: auto; display: block; }
+    .legend { display: flex; gap: 14px; font-size: 12px; color: var(--muted); margin: 4px 0 8px; }
+    .legend i { display: inline-block; width: 14px; height: 3px; margin-right: 6px; vertical-align: middle; }
+    .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .card {
+      background: var(--bg-2);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .card h3 { margin-top: 0; }
+    footer {
+      margin-top: 36px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    @media (max-width: 860px) {
+      .stats, .grid-2, .split-cover, .cards { grid-template-columns: 1fr; }
+      h1 { font-size: 26px; }
+    }
+    @media print {
+      nav.toc, .custom-wd { display: none; }
+      body { background: #fff; }
+      .wrap { max-width: none; }
+      .calc, .chart, table, .stat, .card, header.hero { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <p class="kicker">Локальный отчёт · machine vision</p>
+      <h1>Basler acA5472-17um + Computar 12 mm 1:2.6</h1>
+      <p class="muted">
+        Оптико-системный разбор пары: 20 Мп USB3 ace U на Sony IMX183CLK-J и фикс-объектив
+        Computar V1226-MPZ. Файл автономный — открывается в браузере без интернета и без сервера.
+      </p>
+      <nav class="toc">
+        <a href="#compat">Совместимость</a>
+        <a href="#camera">Камера</a>
+        <a href="#lens">Объектив</a>
+        <a href="#cover">Покрытие</a>
+        <a href="#calc">Калькулятор</a>
+        <a href="#diffraction">Дифракция</a>
+        <a href="#dof">ГРИП</a>
+        <a href="#rs">Rolling shutter</a>
+        <a href="#use">Применение</a>
+        <a href="#build">Сборка</a>
+      </nav>
+    </header>
+
+    <div class="verdict">
+      <strong>Вердикт: пара собрана правильно.</strong>
+      Тот же кристалл Sony IMX183, на который Computar MPZ прямо указывает. C-mount совпадает,
+      круг Ø16 мм накрывает диагональ 15.78 мм (полный кадр 5496×3672 — 15.86 мм, запас ещё меньше).
+      acA5472-17um спокойнее по USB, чем Hikrobot на том же сенсоре: 17 к/с вместо 19.2.
+      Ограничения те же — rolling shutter, мелкий пиксель, ГРИП и края круга.
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>20 Мп</b><span>5472 × 3648 default, монохром</span></div>
+      <div class="stat"><b>17 к/с</b><span>default кадр, USB3 ace U</span></div>
+      <div class="stat"><b>12 мм / F2.6</b><span>C-mount, круг Ø16 мм</span></div>
+      <div class="stat warn"><b>~0.1 мм</b><span>запас круга по радиусу</span></div>
+    </div>
+
+    <h2 id="compat">Совместимость пары</h2>
+    <table>
+      <thead>
+        <tr><th>Параметр</th><th>Камера</th><th>Объектив</th><th>Статус</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="dot ok"></span>Байонет</td><td>C-mount, flange 17.526 мм</td><td>C-mount, BFL 10.6 мм</td><td>Совпадает, фокус на ∞ есть</td></tr>
+        <tr><td><span class="dot ok"></span>Формат</td><td>1", 13.13 × 8.76 мм, Ø 15.78 мм default</td><td>1" Ø16 мм</td><td>Накрывает, запас 0.22 мм по диагонали</td></tr>
+        <tr><td><span class="dot warn"></span>Разрешение</td><td>2.4 мкм, Найквист 208 лп/мм</td><td>20 Мп / 2.4 мкм (IMX183 в списке MPZ)</td><td>Заявлено, края требуют проверки MTF</td></tr>
+        <tr><td><span class="dot ok"></span>Дисторсия</td><td>—</td><td>0.0% на 1" (y = 8.0 мм)</td><td>Метрология без калибровки возможна</td></tr>
+        <tr><td><span class="dot ok"></span>Фокус / диафрагма</td><td>—</td><td>Ручные кольца, lock, floating 0.1 м–∞</td><td>Промышленный фикс</td></tr>
+        <tr><td><span class="dot warn"></span>Затвор</td><td>Rolling + Global Reset Release</td><td>—</td><td>Движение только со стробом / Flash Window</td></tr>
+        <tr><td><span class="dot info"></span>Интерфейс</td><td>USB3 Vision / GenICam / pylon</td><td>—</td><td>pylon, Halcon, OpenCV, NI, LabVIEW</td></tr>
+        <tr><td><span class="dot warn"></span>Защита</td><td>IP30, корпус 0–50 °C</td><td>не ranked, −10…+50 °C, 5G</td><td>Шкаф / стол, не улица</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Источник совместимости: Computar MPZ Series прямо указывает IMX183 (1", 20 Мп, 2.4 мкм). «1"» у объектива — классический прямоугольник 12.8 × 9.6 мм; IMX183 шире и ниже.</p>
+
+    <h2 id="camera">Камера Basler acA5472-17um</h2>
+    <p>Серия ace U, USB 3.0 area-scan. Суффикс um = USB + mono. Цветной близнец — acA5472-17uc, медверсия — acA5472-17umMED. GigE-двойник acA5472-5gm/gc даёт те же 20 Мп на ~5 к/с. Артикул 107771. Корпус-куб 29 мм: объектив Computar Ø39 мм визуально больше камеры — это нормально для ace.</p>
+    <div class="grid-2">
+      <div>
+        <h3>Сенсор Sony IMX183CLK-J</h3>
+        <table>
+          <tbody>
+            <tr><td>Тип</td><td>CMOS, progressive, rolling shutter</td></tr>
+            <tr><td>Полное окно</td><td>5496 × 3672 (диагональ 15.86 мм)</td></tr>
+            <tr><td>Default ROI</td><td>5472 × 3648 (13.13 × 8.76 мм, Ø 15.78 мм)</td></tr>
+            <tr><td>Пиксель</td><td>2.40 × 2.40 мкм</td></tr>
+            <tr><td>Sony Type 1</td><td>эффективная диагональ 15.86 мм</td></tr>
+            <tr><td>Кадр default</td><td>17 к/с</td></tr>
+            <tr><td>ShutterMode</td><td>Rolling / GlobalResetRelease</td></tr>
+            <tr><td>QE (EMVA, 541 нм)</td><td>75.6% тип.</td></tr>
+            <tr><td>Dark noise (EMVA)</td><td>3 e− тип.</td></tr>
+            <tr><td>Saturation (EMVA)</td><td>14.8 ke− тип.</td></tr>
+            <tr><td>DR / SNR (EMVA)</td><td>71.8 дБ / 41.7 дБ тип.</td></tr>
+            <tr><td>Экспозиция</td><td>API + hardware trigger; в EMVA-отчёте 16–90 944 мкс</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3>Интерфейс и механика</h3>
+        <table>
+          <tbody>
+            <tr><td>Интерфейс</td><td>USB 3.0 SuperSpeed, Micro-B со винтом</td></tr>
+            <tr><td>Протокол</td><td>USB3 Vision, GenICam / SFNC / PFNC</td></tr>
+            <tr><td>Питание</td><td>только USB 5 В, SELV/LPS</td></tr>
+            <tr><td>Потребление</td><td>тип. 2.9 Вт @ 5 В</td></tr>
+            <tr><td>I/O</td><td>Hirose HR10A 6-pin: Line1 in, Line2 out, Line3/4 GPIO</td></tr>
+            <tr><td>Триггер</td><td>hardware / software / free-run</td></tr>
+            <tr><td>Форматы</td><td>Mono8, Mono12, Mono12p (10/12 bit ADC)</td></tr>
+            <tr><td>Байонет</td><td>C-mount</td></tr>
+            <tr><td>Корпус</td><td>29.3 × 29 × 29 мм без разъёмов; 48.2 мм с ними</td></tr>
+            <tr><td>Масса</td><td>&lt; 80 г</td></tr>
+            <tr><td>Климат</td><td>0–50 °C, 20–80% RH, IP30</td></tr>
+            <tr><td>ПО</td><td>Basler pylon ≥ 4.0; Windows / Linux / macOS / ARM / Android</td></tr>
+            <tr><td>Обработка</td><td>Basler PGI (шум / резкость, опционально)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3>Поток данных USB3</h3>
+    <table>
+      <thead>
+        <tr><th>Формат</th><th class="num">Кадр</th><th class="num">При 17 к/с</th><th>Реалистично на USB3</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="dot ok"></span>Mono8</td><td class="num">19.0 МБ</td><td class="num">323 МБ/с (2.6 Гбит/с)</td><td>Да, запас относительно 19.2 к/с Hikrobot</td></tr>
+        <tr><td><span class="dot warn"></span>Mono12 packed</td><td class="num">28.5 МБ</td><td class="num">484 МБ/с</td><td>На полном кадре часто не держит 17 к/с</td></tr>
+        <tr><td><span class="dot bad"></span>Mono12 unpacked</td><td class="num">38.0 МБ</td><td class="num">646 МБ/с</td><td>Нет на полном кадре</td></tr>
+        <tr><td><span class="dot info"></span>USB 2.0, Mono8</td><td class="num">19.0 МБ</td><td class="num">—</td><td>~1.5–2 к/с</td></tr>
+      </tbody>
+    </table>
+    <p class="note">17 к/с в datasheet — default 5472×3648. Практический потолок SuperSpeed ~350–400 МБ/с. Кабель Micro-B со винтами, родной контроллер USB3, не хаб. Питание только по USB: длинный кабель и слабый порт режут и fps, и стабильность.</p>
+
+    <h3>Сравнение с Hikrobot MV-CE200-10UM</h3>
+    <p class="note">Обе камеры на IMX183. Оптика, поле и ГРИП с Computar 12 мм совпадают. Разница — механика, поток, измеренный EMVA и экосистема.</p>
+    <table>
+      <thead>
+        <tr><th>Параметр</th><th>acA5472-17um</th><th>MV-CE200-10UM</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Кадр / fps</td><td>5472×3648 @ 17 к/с (full 5496×3672)</td><td>5472×3648 @ 19.2 к/с</td></tr>
+        <tr><td>Затвор</td><td>Rolling + GlobalResetRelease, Flash Window</td><td>Rolling + Global Reset</td></tr>
+        <tr><td>EMVA / заявка</td><td>QE 75.6%, DR 71.8 дБ, 3 e−, 14.8 ke−</td><td>DR 65.5 дБ, SNR 41.5 дБ (без полного EMVA в datasheet)</td></tr>
+        <tr><td>Корпус</td><td>29 мм куб, &lt;80 г</td><td>44 × 29 × 59 мм, ~100 г</td></tr>
+        <tr><td>Питание</td><td>только USB 5 В</td><td>USB 5 В или 12 В Hirose</td></tr>
+        <tr><td>I/O</td><td>1 in + 1 out + 2 GPIO</td><td>1 in + 1 out + 1 bi</td></tr>
+        <tr><td>ПО</td><td>pylon</td><td>MVS</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="lens">Объектив Computar V1226-MPZ</h2>
+    <p>Маркировка «12 mm 1:2.6» у C-mount 20 Мп линз Computar — это V1226-MPZ (не ruggedized MPZ-R). Серия MPZ: floating-фокус, низкая дисторсия, заявленная вибростойкость 5G, резьба фильтра M37.5×0.5. Существует усиленный V1226-MPZ-R (10G / 15G, часто с фиксированной диафрагмой).</p>
+    <div class="grid-2">
+      <table>
+        <tbody>
+          <tr><td>Фокус</td><td>12 мм, фикс</td></tr>
+          <tr><td>Светосила</td><td>1:2.6 … F16, ручная</td></tr>
+          <tr><td>Диапазон фокуса</td><td>ручной, 0.1 м – ∞</td></tr>
+          <tr><td>Круг изображения</td><td>Ø 16.0 мм</td></tr>
+          <tr><td>Max image format</td><td>12.8 × 9.6 мм</td></tr>
+          <tr><td>Дисторсия 1"</td><td>0.0%</td></tr>
+          <tr><td>Дисторсия 2/3"</td><td>−1.1%</td></tr>
+          <tr><td>Передняя апертура</td><td>Ø 22.6 мм</td></tr>
+          <tr><td>Задняя апертура</td><td>Ø 15.1 мм</td></tr>
+          <tr><td>Flange / BFL</td><td>17.526 / 10.6 мм</td></tr>
+          <tr><td>Габарит / масса</td><td>Ø39 × 43.5 мм, 98.4 г</td></tr>
+          <tr><td>Температура</td><td>−10…+50 °C</td></tr>
+        </tbody>
+      </table>
+      <div>
+        <h3>Угол поля на форматах Computar</h3>
+        <table>
+          <thead><tr><th>Формат</th><th class="num">D</th><th class="num">H</th><th class="num">V</th></tr></thead>
+          <tbody>
+            <tr><td>1" (12.8×9.6)</td><td class="num">67.4°</td><td class="num">56.7°</td><td class="num">44.1°</td></tr>
+            <tr><td>2/3"</td><td class="num">49.8°</td><td class="num">40.7°</td><td class="num">31.0°</td></tr>
+            <tr><td>1/1.8"</td><td class="num">41.5°</td><td class="num">33.7°</td><td class="num">25.5°</td></tr>
+            <tr><td>IMX183 (расчёт)</td><td class="num">66.7°</td><td class="num">57.4°</td><td class="num">40.1°</td></tr>
+          </tbody>
+        </table>
+        <p class="note">На IMX183 горизонталь шире каталожного 1", вертикаль уже: сенсор 3:2, не 4:3. Объект на MOD (каталог 1"): 123.2 × 91.9 мм → на IMX183 ≈ 126 × 84 мм.</p>
+      </div>
+    </div>
+
+    <h2 id="cover">Покрытие круга изображения</h2>
+    <div class="split-cover">
+      <svg viewBox="0 0 180 180" width="200" height="200" aria-label="Покрытие круга изображения">
+        <circle cx="90" cy="86" r="72" fill="currentColor" opacity="0.08" stroke="currentColor" stroke-width="1.4"/>
+        <rect x="32.4" y="42.8" width="115.2" height="86.4" fill="none" stroke="currentColor" stroke-dasharray="4 3" opacity="0.55"/>
+        <rect x="30.9" y="46.6" width="118.2" height="78.8" fill="#1f5c4a" fill-opacity="0.22" stroke="#1f5c4a" stroke-width="1.6"/>
+        <text x="90" y="90" text-anchor="middle" font-size="12" font-family="var(--ui)">IMX183</text>
+        <text x="90" y="172" text-anchor="middle" font-size="10" fill="currentColor" opacity="0.65">круг Ø16 мм · классический 1" пунктиром</text>
+      </svg>
+      <div>
+        <p>Круг объектива Ø16.00 мм, диагональ default-окна IMX183 15.78 мм. Радиальный запас ≈ 0.11 мм. Если включить полное окно 5496×3672, диагональ 15.86 мм — запас падает до ~0.07 мм. Углы сидят на краю круга. Decentering, толстый IR-cut или проставка дадут виньетку.</p>
+        <p>Классический 1" (пунктир, 12.8 × 9.6) уже IMX183 по ширине на 0.33 мм. На приёмке смотрите relative illumination и резкость по четырём углам полного кадра. На ace отдельно проверьте Maximum Allowed Lens Intrusion: задний выступ объектива не должен упираться в сенсорный стек.</p>
+      </div>
+    </div>
+
+    <h2 id="calc">Калькулятор поля и масштаба</h2>
+    <div class="calc">
+      <p class="muted" style="margin:0">Рабочая дистанция, мм (объект → объектив)</p>
+      <div class="chips" id="wd-chips"></div>
+      <label class="custom-wd">Своя дистанция
+        <input id="wd-input" type="number" min="100" max="10000" step="10" value="300"> мм
+      </label>
+      <p class="muted" style="margin:0">Диафрагма</p>
+      <div class="chips" id="n-chips"></div>
+      <div class="stats" id="live-stats"></div>
+      <p class="note" id="live-note"></p>
+    </div>
+
+    <h3>Поле зрения по дистанции</h3>
+    <p class="note">Ширина и высота поля на объекте, мм. Ось X — рабочая дистанция, м. Точка 0.10 м — каталожный MOD Computar, масштабированный на IMX183.</p>
+    <div class="legend">
+      <span><i style="background:#2b4c7e"></i>Ширина поля</span>
+      <span><i style="background:#8a8174"></i>Высота поля</span>
+    </div>
+    <div class="chart" id="fov-chart"></div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>WD</th>
+          <th>Поле H × V</th>
+          <th class="num">мкм/пикс</th>
+          <th class="num">2 px на объекте</th>
+          <th class="num">линия 0.1 мм, пикс</th>
+        </tr>
+      </thead>
+      <tbody id="fov-table"></tbody>
+    </table>
+
+    <h2 id="diffraction">Дифракция vs пиксель 2.4 мкм</h2>
+    <p>Пиксель мелкий: Найквист 208 лп/мм. На f/2.6 дифракция ещё не главная; к f/8 cutoff падает почти к Найквисту, дальше диафрагма только мылит. Для максимальной резкости — f/2.8–f/4, для ГРИП — не глубже f/5.6 без крайней нужды.</p>
+    <div class="grid-2">
+      <div>
+        <p class="note">Диаметр диска Эйри при λ = 550 нм, мкм. Линия — размер пикселя 2.4 мкм.</p>
+        <div class="chart" id="airy-chart"></div>
+      </div>
+      <div>
+        <p class="note">Дифракционный cutoff, лп/мм. Линия — Найквист IMX183 208 лп/мм.</p>
+        <div class="chart" id="cutoff-chart"></div>
+      </div>
+    </div>
+    <p class="note">Airy ≈ 2.44 λ N, cutoff ≈ 1/(λ N), λ = 550 нм. Реальный MTF объектива ниже дифракционного предела, особенно на краю поля.</p>
+
+    <h2 id="dof">Глубина резкости — узкое место пары</h2>
+    <p>При CoC = 2 пикселя (4.8 мкм) и f/2.6 на дистанции 300 мм полная ГРИП ≈ 15 мм. Это не «универсальный 12 мм», а почти макро-режим по допуску фокуса. Для объёмных деталей, конвейера с биением по Z или ручной подачи нужен либо стоп до f/4–f/5.6, либо телецентрический объектив, либо механика, которая держит плоскость.</p>
+    <table>
+      <thead>
+        <tr><th>WD / N</th><th class="num">f/2.6</th><th class="num">f/4</th><th class="num">f/5.6</th><th class="num">f/8</th></tr>
+      </thead>
+      <tbody id="dof-table"></tbody>
+    </table>
+    <p class="note">Полная ГРИП (мм) при кружке рассеяния 4.8 мкм. Формула гиперфокала H = f²/(N c) + f.</p>
+
+    <h2 id="rs">Rolling shutter</h2>
+    <div class="grid-2">
+      <div>
+        <p>Кадр 3648 строк при 17 к/с занимает ~59 мс. Время строки порядка 16 мкс. Объект на 1 м/с смещается между первой и последней строкой ≈ 59 мм. Basler публикует offset для GRR: 13 строк (8-bit) / 16 строк (12-bit) — это не весь кадр, а служебный сдвиг экспозиции.</p>
+        <p>Global Reset Release стартует все пиксели вместе, но заканчивает экспозицию построчно. Без вспышки верх кадра светлее низа. Заморозка движения — короткий строб в темноте, сигнал Flash Window на выходе. В pylon: <code>ShutterMode = GlobalResetRelease</code>.</p>
+      </div>
+      <table>
+        <thead><tr><th>Сценарий</th><th>Оценка</th></tr></thead>
+        <tbody>
+          <tr><td><span class="dot ok"></span>Плата / печать на столе</td><td>Отлично</td></tr>
+          <tr><td><span class="dot ok"></span>OCR, этикетка, упаковка стоп-кадром</td><td>Отлично</td></tr>
+          <tr><td><span class="dot warn"></span>Конвейер + строб</td><td>Нормально</td></tr>
+          <tr><td><span class="dot bad"></span>Конвейер без строба, робот, вибрация</td><td>Искажения RS</td></tr>
+          <tr><td><span class="dot info"></span>4K crop / binning 2×2</td><td>Быстрее, меньше RS-время</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="use">Для каких задач брать и не брать</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Подходит</h3>
+        <p>Контроль печатных плат, полупроводники, этикетка, упаковка стоп-кадром — ace U как раз для этого класса.</p>
+        <p>Измерение плоских деталей: дисторсия 0% и 20 Мп дают мелкий GSD; EMVA 71.8 дБ полезен, если нужен запас по контрасту.</p>
+        <p>Документы, маркировка, гравировка, инспекция поверхности при фиксированном WD.</p>
+        <p>Компактный стенд: куб 29 мм легче вписать, чем корпус Hikrobot 59 мм.</p>
+      </div>
+      <div class="card">
+        <h3>Слабые стороны</h3>
+        <p>Быстрое движение без строба — rolling shutter (~59 мс на кадр).</p>
+        <p>Грязный цех / IP65–67: камера IP30, объектив без герметизации.</p>
+        <p>Большая ГРИП и 3D-детали: 12 мм + 2.4 мкм почти не прощают расфокус.</p>
+        <p>Длинный USB без винта, хаб, слабый порт: питание только 5 В, камера чувствительнее Hikrobot с 12 В Hirose.</p>
+      </div>
+    </div>
+
+    <h2 id="build">Практические рекомендации по сборке</h2>
+    <table>
+      <thead><tr><th>Тема</th><th>Что сделать</th></tr></thead>
+      <tbody>
+        <tr><td>Свет</td><td>Яркий постоянный или строб. Не открывать диафрагму «чтобы светлее» — лучше мощность света, чем f/2.6 на объёме.</td></tr>
+        <tr><td>Диафрагма</td><td>Старт f/4. Контроль углов. Не ниже f/8, если нужна дискретизация пикселя.</td></tr>
+        <tr><td>Фокус</td><td>Lock-винты Computar затянуть после настройки. На 20 Мп микронный люфт кольца виден.</td></tr>
+        <tr><td>Фильтр</td><td>М37.5×0.5, тонкий. Толстый IR-cut сдвигает BFL и может виньетить на Ø16 мм.</td></tr>
+        <tr><td>USB</td><td>Порт материнки USB3, кабель Micro-B ≤ 3 м со винтами, не хаб. Для Mono12 — ROI или меньше fps.</td></tr>
+        <tr><td>Триггер</td><td>Hirose Line1 (in) + вспышка на Line2 (out) / GPIO. ShutterMode = GlobalResetRelease, Flash Window.</td></tr>
+        <tr><td>Калибровка</td><td>Несмотря на 0% дисторсии, для метровки — chessboard. Углы на пределе круга. Default ROI, не full 5496×3672, если края мылятся.</td></tr>
+        <tr><td>Тепло</td><td>Куб 29 мм греется. Нужен теплоотвод на кронштейн, не вешать объектив консолью без опоры.</td></tr>
+        <tr><td>Альтернатива</td><td>Движение / грязь: ace global shutter (IMX250/264) + MPZ 16/25 мм или телецентрика.</td></tr>
+      </tbody>
+    </table>
+
+    <footer>
+      <p>Расчёты: default-окно 5472×3648 × 2.4 мкм; ГРИП — гиперфокал, CoC 4.8 мкм; дифракция λ=550 нм. EMVA 1288 — типовые цифры Basler @ 541 нм. Объектив идентифицирован как V1226-MPZ по связке «12 mm 1:2.6 / 1" / 20 Мп».</p>
+      <p>Источники: Basler Product Documentation acA5472-17um · Basler shop EMVA · Sensor Shutter Mode / Electronic Shutter Types · Computar V1226-MPZ spec, 2019.07</p>
+      <p>Сохранено локально. Достаточно открыть этот файл в браузере.</p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const SENSOR_W = 5472 * 0.0024;
+      const SENSOR_H = 3648 * 0.0024;
+      const F = 12;
+      const PIXEL_UM = 2.4;
+      const NX = 1000 / (2 * PIXEL_UM);
+      const WD_OPTIONS = [100, 150, 200, 300, 500, 800, 1000, 1500, 2000];
+      const FSTOPS = [2.6, 4, 5.6, 8, 11, 16];
+      let wd = 300;
+      let fstop = 4;
+
+      function fovAt(wdMm) {
+        if (wdMm <= 100) {
+          return {
+            widthMm: 123.2 * (SENSOR_W / 12.8),
+            heightMm: 91.9 * (SENSOR_H / 9.6),
+            source: "MOD Computar, масштаб на IMX183"
+          };
+        }
+        const mag = F / (wdMm - F);
+        return {
+          widthMm: SENSOR_W / mag,
+          heightMm: SENSOR_H / mag,
+          source: "тонкая линза, дистанция до главной плоскости ≈ WD"
+        };
+      }
+      function dofMm(wdMm, n, cocUm) {
+        const c = cocUm / 1000;
+        const h = (F * F) / (n * c) + F;
+        const u = wdMm;
+        if (u >= h) return { total: Infinity, hyperfocal: h };
+        const near = (h * u) / (h + (u - F));
+        const far = (h * u) / (h - (u - F));
+        return { total: far - near, hyperfocal: h, near: near, far: far };
+      }
+      function airyUm(n) { return 2.44 * 0.55 * n; }
+      function cutoffLpmm(n) { return 1 / (0.00055 * n); }
+      function fmt(n, digits) {
+        if (!isFinite(n)) return "∞";
+        return n.toLocaleString("ru-RU", { maximumFractionDigits: digits, minimumFractionDigits: digits });
+      }
+      function css(name, fallback) {
+        return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fallback;
+      }
+
+      function renderChips() {
+        const wdBox = document.getElementById("wd-chips");
+        wdBox.innerHTML = "";
+        WD_OPTIONS.forEach(function (d) {
+          const b = document.createElement("button");
+          b.className = "chip" + (d === wd ? " active" : "");
+          b.type = "button";
+          b.textContent = d === 100 ? "100 MOD" : String(d);
+          b.addEventListener("click", function () {
+            wd = d;
+            document.getElementById("wd-input").value = String(d);
+            updateLive();
+          });
+          wdBox.appendChild(b);
+        });
+        const nBox = document.getElementById("n-chips");
+        nBox.innerHTML = "";
+        FSTOPS.forEach(function (n) {
+          const b = document.createElement("button");
+          b.className = "chip" + (n === fstop ? " active" : "");
+          b.type = "button";
+          b.textContent = "f/" + n;
+          b.addEventListener("click", function () {
+            fstop = n;
+            updateLive();
+          });
+          nBox.appendChild(b);
+        });
+      }
+
+      function updateLive() {
+        renderChips();
+        const geo = fovAt(wd);
+        const umPerPx = (geo.widthMm / 5472) * 1000;
+        const dof = dofMm(wd, fstop, 4.8);
+        const airy = airyUm(fstop);
+        const cutoff = cutoffLpmm(fstop);
+        const warn = isFinite(dof.total) && dof.total < 30;
+        document.getElementById("live-stats").innerHTML =
+          stat(fmt(geo.widthMm, 0) + " мм", "Ширина поля") +
+          stat(fmt(geo.heightMm, 0) + " мм", "Высота поля") +
+          stat(fmt(umPerPx, 1) + " мкм", "Размер пикселя на объекте") +
+          stat(dof.total === Infinity ? "∞" : fmt(dof.total, 1) + " мм", "ГРИП @ f/" + fstop + ", CoC 2 px", warn);
+        document.getElementById("live-note").textContent =
+          "WD " + wd + " мм · " + geo.source + " · диск Эйри " + fmt(airy, 2) + " мкм (" +
+          fmt(airy / PIXEL_UM, 2) + " px) · cutoff " + fmt(cutoff, 0) + " лп/мм · Найквист " +
+          fmt(NX, 0) + " лп/мм. Два пикселя на объекте ≈ " + fmt(umPerPx * 2, 1) + " мкм.";
+      }
+      function stat(value, label, warn) {
+        return '<div class="stat' + (warn ? " warn" : "") + '"><b>' + value + "</b><span>" + label + "</span></div>";
+      }
+
+      function lineChart(el, cats, series, yLabel) {
+        const w = 720, h = 240, l = 48, r = 16, t = 16, b = 36;
+        const pw = w - l - r, ph = h - t - b;
+        let max = 0;
+        series.forEach(function (s) { s.data.forEach(function (v) { if (v > max) max = v; }); });
+        max = Math.ceil(max / 50) * 50 || 1;
+        const ink = css("--ink", "#1c1915");
+        const muted = css("--muted", "#5c564c");
+        const line = css("--line", "#d9d1c3");
+        let svg = '<svg viewBox="0 0 ' + w + ' ' + h + '" role="img" aria-label="' + yLabel + '">';
+        for (let i = 0; i <= 4; i++) {
+          const y = t + ph * i / 4;
+          const val = max * (1 - i / 4);
+          svg += '<line x1="' + l + '" y1="' + y + '" x2="' + (l + pw) + '" y2="' + y + '" stroke="' + line + '" stroke-width="1"/>';
+          svg += '<text x="' + (l - 8) + '" y="' + (y + 4) + '" text-anchor="end" font-size="11" fill="' + muted + '">' + Math.round(val) + "</text>";
+        }
+        series.forEach(function (s) {
+          const pts = s.data.map(function (v, i) {
+            const x = l + pw * i / (cats.length - 1);
+            const y = t + ph * (1 - v / max);
+            return x + "," + y;
+          }).join(" ");
+          svg += '<polyline fill="none" stroke="' + s.color + '" stroke-width="2.2" points="' + pts + '"/>';
+          s.data.forEach(function (v, i) {
+            const x = l + pw * i / (cats.length - 1);
+            const y = t + ph * (1 - v / max);
+            svg += '<circle cx="' + x + '" cy="' + y + '" r="3" fill="' + s.color + '"/>';
+          });
+        });
+        cats.forEach(function (c, i) {
+          const x = l + pw * i / (cats.length - 1);
+          svg += '<text x="' + x + '" y="' + (h - 10) + '" text-anchor="middle" font-size="11" fill="' + muted + '">' + c + "</text>";
+        });
+        svg += '<text x="8" y="12" font-size="11" fill="' + muted + '">' + yLabel + "</text></svg>";
+        el.innerHTML = svg;
+      }
+
+      function barChart(el, cats, values, ref, refLabel, yLabel, color) {
+        const w = 520, h = 220, l = 48, r = 16, t = 18, b = 36;
+        const pw = w - l - r, ph = h - t - b;
+        const max = Math.max.apply(null, values.concat([ref || 0])) * 1.15;
+        const muted = css("--muted", "#5c564c");
+        const line = css("--line", "#d9d1c3");
+        const ink = css("--ink", "#1c1915");
+        const bw = pw / cats.length * 0.62;
+        let svg = '<svg viewBox="0 0 ' + w + ' ' + h + '" role="img" aria-label="' + yLabel + '">';
+        for (let i = 0; i <= 4; i++) {
+          const y = t + ph * i / 4;
+          const val = max * (1 - i / 4);
+          svg += '<line x1="' + l + '" y1="' + y + '" x2="' + (l + pw) + '" y2="' + y + '" stroke="' + line + '"/>';
+          svg += '<text x="' + (l - 8) + '" y="' + (y + 4) + '" text-anchor="end" font-size="11" fill="' + muted + '">' + Math.round(val) + "</text>";
+        }
+        if (ref) {
+          const ry = t + ph * (1 - ref / max);
+          svg += '<line x1="' + l + '" y1="' + ry + '" x2="' + (l + pw) + '" y2="' + ry + '" stroke="' + css("--accent-2", "#c45c26") + '" stroke-dasharray="4 3"/>';
+          svg += '<text x="' + (l + pw) + '" y="' + (ry - 4) + '" text-anchor="end" font-size="10" fill="' + css("--accent-2", "#c45c26") + '">' + refLabel + "</text>";
+        }
+        values.forEach(function (v, i) {
+          const x = l + pw * (i + 0.19) / cats.length;
+          const bh = ph * v / max;
+          const y = t + ph - bh;
+          svg += '<rect x="' + x + '" y="' + y + '" width="' + bw + '" height="' + bh + '" fill="' + color + '"/>';
+          svg += '<text x="' + (x + bw / 2) + '" y="' + (h - 10) + '" text-anchor="middle" font-size="11" fill="' + muted + '">' + cats[i] + "</text>";
+          svg += '<text x="' + (x + bw / 2) + '" y="' + (y - 4) + '" text-anchor="middle" font-size="10" fill="' + ink + '">' + (Math.round(v * 10) / 10) + "</text>";
+        });
+        svg += "</svg>";
+        el.innerHTML = svg;
+      }
+
+      function fillStatic() {
+        const body = document.getElementById("fov-table");
+        body.innerHTML = WD_OPTIONS.map(function (d) {
+          const g = fovAt(d);
+          const u = (g.widthMm / 5472) * 1000;
+          return "<tr><td>" + (d === 100 ? "100 мм MOD" : d + " мм") + "</td><td>" +
+            fmt(g.widthMm, 0) + " × " + fmt(g.heightMm, 0) + " мм</td><td class='num'>" +
+            fmt(u, 1) + "</td><td class='num'>" + fmt(u * 2, 1) + " мкм</td><td class='num'>" +
+            fmt(100 / u, 1) + "</td></tr>";
+        }).join("");
+
+        document.getElementById("dof-table").innerHTML = [150, 300, 500, 1000].map(function (d) {
+          const cells = [2.6, 4, 5.6, 8].map(function (n) {
+            const x = dofMm(d, n, 4.8);
+            return "<td class='num'>" + (x.total === Infinity ? "∞" : fmt(x.total, 1) + " мм") + "</td>";
+          }).join("");
+          return "<tr><td>" + d + " мм</td>" + cells + "</tr>";
+        }).join("");
+
+        lineChart(
+          document.getElementById("fov-chart"),
+          ["0.10", "0.15", "0.20", "0.30", "0.50", "0.80", "1.0", "1.5", "2.0"],
+          [
+            { color: "#2b4c7e", data: WD_OPTIONS.map(function (d) { return Math.round(fovAt(d).widthMm); }) },
+            { color: "#8a8174", data: WD_OPTIONS.map(function (d) { return Math.round(fovAt(d).heightMm); }) }
+          ],
+          "Поле, мм"
+        );
+        barChart(
+          document.getElementById("airy-chart"),
+          ["f/2.6", "f/4", "f/5.6", "f/8", "f/11", "f/16"],
+          FSTOPS.map(function (n) { return Number(airyUm(n).toFixed(2)); }),
+          2.4,
+          "пиксель 2.4 мкм",
+          "мкм",
+          "#c45c26"
+        );
+        barChart(
+          document.getElementById("cutoff-chart"),
+          ["f/2.6", "f/4", "f/5.6", "f/8", "f/11", "f/16"],
+          FSTOPS.map(function (n) { return Math.round(cutoffLpmm(n)); }),
+          208,
+          "Найквист 208",
+          "лп/мм",
+          "#2b4c7e"
+        );
+      }
+
+      document.getElementById("wd-input").addEventListener("input", function (e) {
+        const v = Number(e.target.value);
+        if (v >= 100) { wd = v; updateLive(); }
+      });
+
+      fillStatic();
+      updateLive();
+    })();
+  </script>
+</body>
+</html>

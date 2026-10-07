@@ -1,0 +1,47 @@
+{
+  "camera": {
+    "backend": "basler",
+    "exposure_us": 3000,
+    "gain_db": 0.0,
+    "average_frames": 4,
+    "timeout_ms": 3000,
+    "mvs_import_path": null
+  },
+  "optics": {
+    "focal_mm": 12.0,
+    "wd_mm": 127.0,
+    "undistort_npz": null
+  },
+  "board": {
+    "width_mm": 100.0,
+    "height_mm": 80.0,
+    "cad_y_up": true,
+    "cad_rot_ccw": true,
+    "px_per_mm": 43.0,
+    "raw_px_per_mm": 43.4,
+    "fiducial_diameter_mm": 1.0,
+    "fiducial_search_mm": 4.0,
+    "fiducials": [
+      {"x_mm": 3.0, "y_mm": 3.0, "approx_px": [500, 3300]},
+      {"x_mm": 97.0, "y_mm": 3.0, "approx_px": [4580, 3300]},
+      {"x_mm": 97.0, "y_mm": 77.0, "approx_px": [4580, 90]},
+      {"x_mm": 3.0, "y_mm": 77.0, "approx_px": [500, 90]}
+    ]
+  },
+  "files": {
+    "centroid": "board-top.pos.csv",
+    "bom": "bom.csv",
+    "packages": "packages.json"
+  },
+  "inspect": {
+    "search_mm": 0.8,
+    "rot_search_deg": 20,
+    "shift_tol_frac": 0.35,
+    "rot_tol_deg": 6,
+    "polarity_margin": 0.1,
+    "var_k": 5.0,
+    "var_sigma_floor": 6.0,
+    "board_var_k": 4.0,
+    "board_sigma_floor": 3.0
+  }
+}

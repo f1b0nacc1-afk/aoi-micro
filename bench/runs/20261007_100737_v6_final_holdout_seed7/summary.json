@@ -1,0 +1,2190 @@
+{
+ "summary": {
+  "recall": 0.9326,
+  "classification": 0.8427,
+  "n_defects": 89,
+  "per_type": {
+   "ball": {
+    "n": 6,
+    "detected": 6,
+    "classified": 6,
+    "recall": 1.0,
+    "class_acc": 1.0
+   },
+   "billboard": {
+    "n": 6,
+    "detected": 6,
+    "classified": 6,
+    "recall": 1.0,
+    "class_acc": 1.0
+   },
+   "bridge": {
+    "n": 7,
+    "detected": 7,
+    "classified": 7,
+    "recall": 1.0,
+    "class_acc": 1.0
+   },
+   "damaged": {
+    "n": 7,
+    "detected": 3,
+    "classified": 1,
+    "recall": 0.429,
+    "class_acc": 0.143
+   },
+   "excess": {
+    "n": 7,
+    "detected": 7,
+    "classified": 3,
+    "recall": 1.0,
+    "class_acc": 0.429
+   },
+   "foreign": {
+    "n": 7,
+    "detected": 7,
+    "classified": 7,
+    "recall": 1.0,
+    "class_acc": 1.0
+   },
+   "marking": {
+    "n": 7,
+    "detected": 1,
+    "classified": 1,
+    "recall": 0.143,
+    "class_acc": 0.143
+   },
+   "missing": {
+    "n": 6,
+    "detected": 6,
+    "classified": 6,
+    "recall": 1.0,
+    "class_acc": 1.0
+   },
+   "no_solder": {
+    "n": 6,
+    "detected": 5,
+    "classified": 5,
+    "recall": 0.833,
+    "class_acc": 0.833
+   },
+   "polarity": {
+    "n": 6,
+    "detected": 6,
+    "classified": 6,
+    "recall": 1.0,
+    "class_acc": 1.0
+   },
+   "rot90": {
+    "n": 6,
+    "detected": 6,
+    "classified": 6,
+    "recall": 1.0,
+    "class_acc": 1.0
+   },
+   "rotate": {
+    "n": 7,
+    "detected": 6,
+    "classified": 6,
+    "recall": 0.857,
+    "class_acc": 0.857
+   },
+   "shift": {
+    "n": 6,
+    "detected": 6,
+    "classified": 5,
+    "recall": 1.0,
+    "class_acc": 0.833
+   },
+   "tombstone": {
+    "n": 6,
+    "detected": 6,
+    "classified": 6,
+    "recall": 1.0,
+    "class_acc": 1.0
+   },
+   "wrong": {
+    "n": 6,
+    "detected": 6,
+    "classified": 5,
+    "recall": 1.0,
+    "class_acc": 0.833
+   }
+  },
+  "false_calls": {
+   "bad": {
+    "boards": 16,
+    "parts": 1032,
+    "false_parts": 10,
+    "false_board": 5,
+    "fail_verdict": 16,
+    "false_call_rate": 0.0097
+   },
+   "good_A": {
+    "boards": 8,
+    "parts": 516,
+    "false_parts": 7,
+    "false_board": 0,
+    "fail_verdict": 5,
+    "false_call_rate": 0.0136
+   },
+   "good_B": {
+    "boards": 8,
+    "parts": 516,
+    "false_parts": 6,
+    "false_board": 0,
+    "fail_verdict": 6,
+    "false_call_rate": 0.0116
+   }
+  },
+  "false_by_package": {
+   "0603": 4,
+   "0805": 3,
+   "SOIC-8": 3,
+   "0402": 3,
+   "1206": 2,
+   "Tantalum_Case-A": 2,
+   "TSSOP-20": 2,
+   "QFN-32": 2,
+   "SOD-123": 1,
+   "LED_0805": 1
+  },
+  "good_board_fail_rate": 0.688,
+  "bad_board_escape_rate": 0.0,
+  "timing": {
+   "train_s": 22.06,
+   "inspect_s": 1.52,
+   "render_s": 0.15
+  },
+  "tag": "v6_final_holdout_seed7",
+  "run": "20261007_100737_v6_final_holdout_seed7",
+  "seed": 7,
+  "inspect_over": {},
+  "config": {
+   "n_designs": 4,
+   "n_golden": 20,
+   "n_good": 2,
+   "n_alt": 2,
+   "n_bad": 4,
+   "per_bad": 6
+  }
+ },
+ "boards": [
+  {
+   "design": "d0",
+   "name": "good_A0",
+   "batch": "A",
+   "kind": "good_A",
+   "gt": [],
+   "false_parts": [],
+   "false_board": [],
+   "n_parts": 60,
+   "verdict": "PASS"
+  },
+  {
+   "design": "d0",
+   "name": "good_A1",
+   "batch": "A",
+   "kind": "good_A",
+   "gt": [],
+   "false_parts": [
+    {
+     "ref": "C11",
+     "package": "1206",
+     "defects": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_board": [],
+   "n_parts": 60,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d0",
+   "name": "good_B0",
+   "batch": "B",
+   "kind": "good_B",
+   "gt": [],
+   "false_parts": [
+    {
+     "ref": "R18",
+     "package": "0603",
+     "defects": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_board": [],
+   "n_parts": 60,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d0",
+   "name": "good_B1",
+   "batch": "B",
+   "kind": "good_B",
+   "gt": [],
+   "false_parts": [
+    {
+     "ref": "C20",
+     "package": "0603",
+     "defects": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_board": [],
+   "n_parts": 60,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d0",
+   "name": "bad0",
+   "batch": "A",
+   "kind": "bad",
+   "gt": [
+    {
+     "type": "damaged",
+     "ref": "R8",
+     "pkg": "0805",
+     "x": 43.04,
+     "y": 39.35,
+     "expect": [
+      "MISMATCH",
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": false,
+     "codes": [
+      "MISSING"
+     ]
+    },
+    {
+     "type": "excess",
+     "ref": "Q2",
+     "pkg": "SOT-23",
+     "x": 12.52,
+     "y": 23.1,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "foreign",
+     "ref": null,
+     "x": 44.42,
+     "y": 30.74,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "bridge",
+     "ref": "U5",
+     "pkg": "QFN-32",
+     "x": 33.35,
+     "y": 6.0,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "rotate",
+     "ref": "D4",
+     "pkg": "SOD-123",
+     "x": 56.53,
+     "y": 6.56,
+     "expect": [
+      "ROTATED"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ROTATED"
+     ]
+    },
+    {
+     "type": "marking",
+     "ref": "U2",
+     "pkg": "QFN-32",
+     "x": 30.9,
+     "y": 41.52,
+     "expect": [],
+     "detected": false,
+     "classified": false,
+     "codes": []
+    }
+   ],
+   "false_parts": [
+    {
+     "ref": "C17",
+     "package": "0805",
+     "defects": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_board": [],
+   "n_parts": 60,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d0",
+   "name": "bad1",
+   "batch": "B",
+   "kind": "bad",
+   "gt": [
+    {
+     "type": "polarity",
+     "ref": "U1",
+     "pkg": "LQFP-48",
+     "x": 27.32,
+     "y": 25.13,
+     "expect": [
+      "POLARITY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "POLARITY"
+     ]
+    },
+    {
+     "type": "rotate",
+     "ref": "D3",
+     "pkg": "SMA",
+     "x": 50.71,
+     "y": 17.22,
+     "expect": [
+      "ROTATED"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ROTATED"
+     ]
+    },
+    {
+     "type": "rot90",
+     "ref": "U2",
+     "pkg": "QFN-32",
+     "x": 30.9,
+     "y": 41.52,
+     "expect": [
+      "POLARITY",
+      "ROTATED"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "POLARITY"
+     ]
+    },
+    {
+     "type": "marking",
+     "ref": "U5",
+     "pkg": "QFN-32",
+     "x": 30.9,
+     "y": 7.0,
+     "expect": [],
+     "detected": false,
+     "classified": false,
+     "codes": []
+    },
+    {
+     "type": "billboard",
+     "ref": "C17",
+     "pkg": "0805",
+     "x": 39.14,
+     "y": 44.9,
+     "expect": [],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISSING"
+     ]
+    },
+    {
+     "type": "foreign",
+     "ref": null,
+     "x": 21.12,
+     "y": 40.52,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_parts": [],
+   "false_board": [],
+   "n_parts": 60,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d0",
+   "name": "bad2",
+   "batch": "A",
+   "kind": "bad",
+   "gt": [
+    {
+     "type": "no_solder",
+     "ref": "R1",
+     "pkg": "0402",
+     "x": 52.63,
+     "y": 44.75,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "ball",
+     "ref": "R16",
+     "pkg": "0805",
+     "x": 4.59,
+     "y": 40.46,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "missing",
+     "ref": "C23",
+     "pkg": "0402",
+     "x": 44.28,
+     "y": 11.2,
+     "expect": [
+      "MISSING",
+      "MISMATCH"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISMATCH"
+     ]
+    },
+    {
+     "type": "damaged",
+     "ref": "C14",
+     "pkg": "0805",
+     "x": 47.87,
+     "y": 31.84,
+     "expect": [
+      "MISMATCH",
+      "ANOMALY"
+     ],
+     "detected": false,
+     "classified": false,
+     "codes": []
+    },
+    {
+     "type": "tombstone",
+     "ref": "C25",
+     "pkg": "0402",
+     "x": 35.31,
+     "y": 26.79,
+     "expect": [],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISMATCH"
+     ]
+    },
+    {
+     "type": "bridge",
+     "ref": "U2",
+     "pkg": "QFN-32",
+     "x": 28.45,
+     "y": 40.52,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_parts": [],
+   "false_board": [],
+   "n_parts": 60,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d0",
+   "name": "bad3",
+   "batch": "B",
+   "kind": "bad",
+   "gt": [
+    {
+     "type": "wrong",
+     "ref": "R11",
+     "pkg": "0805",
+     "x": 18.02,
+     "y": 22.07,
+     "expect": [
+      "MISMATCH",
+      "MISSING",
+      "POLARITY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISMATCH"
+     ]
+    },
+    {
+     "type": "shift",
+     "ref": "C26",
+     "pkg": "0805",
+     "x": 4.53,
+     "y": 33.52,
+     "expect": [
+      "SHIFT"
+     ],
+     "detected": true,
+     "classified": false,
+     "codes": [
+      "MISSING"
+     ]
+    },
+    {
+     "type": "excess",
+     "ref": "R6",
+     "pkg": "0805",
+     "x": 37.22,
+     "y": 35.98,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": false,
+     "codes": [
+      "MISMATCH"
+     ]
+    },
+    {
+     "type": "excess",
+     "ref": "R1",
+     "pkg": "0402",
+     "x": 52.05,
+     "y": 44.75,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "rotate",
+     "ref": "C23",
+     "pkg": "0402",
+     "x": 44.28,
+     "y": 11.2,
+     "expect": [
+      "ROTATED"
+     ],
+     "detected": false,
+     "classified": false,
+     "codes": []
+    },
+    {
+     "type": "billboard",
+     "ref": "R17",
+     "pkg": "0603",
+     "x": 16.36,
+     "y": 5.45,
+     "expect": [],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISSING"
+     ]
+    }
+   ],
+   "false_parts": [
+    {
+     "ref": "D1",
+     "package": "SOD-123",
+     "defects": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_board": [],
+   "n_parts": 60,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d1",
+   "name": "good_A0",
+   "batch": "A",
+   "kind": "good_A",
+   "gt": [],
+   "false_parts": [],
+   "false_board": [],
+   "n_parts": 63,
+   "verdict": "PASS"
+  },
+  {
+   "design": "d1",
+   "name": "good_A1",
+   "batch": "A",
+   "kind": "good_A",
+   "gt": [],
+   "false_parts": [
+    {
+     "ref": "U7",
+     "package": "SOIC-8",
+     "defects": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_board": [],
+   "n_parts": 63,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d1",
+   "name": "good_B0",
+   "batch": "B",
+   "kind": "good_B",
+   "gt": [],
+   "false_parts": [
+    {
+     "ref": "R15",
+     "package": "0402",
+     "defects": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_board": [],
+   "n_parts": 63,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d1",
+   "name": "good_B1",
+   "batch": "B",
+   "kind": "good_B",
+   "gt": [],
+   "false_parts": [
+    {
+     "ref": "U7",
+     "package": "SOIC-8",
+     "defects": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_board": [],
+   "n_parts": 63,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d1",
+   "name": "bad0",
+   "batch": "A",
+   "kind": "bad",
+   "gt": [
+    {
+     "type": "bridge",
+     "ref": "U7",
+     "pkg": "SOIC-8",
+     "x": 13.79,
+     "y": 26.08,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "marking",
+     "ref": "U5",
+     "pkg": "SOT-223",
+     "x": 52.56,
+     "y": 36.18,
+     "expect": [],
+     "detected": false,
+     "classified": false,
+     "codes": []
+    },
+    {
+     "type": "missing",
+     "ref": "C25",
+     "pkg": "0603",
+     "x": 36.67,
+     "y": 31.23,
+     "expect": [
+      "MISSING",
+      "MISMATCH"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISMATCH"
+     ]
+    },
+    {
+     "type": "rot90",
+     "ref": "U1",
+     "pkg": "LQFP-48",
+     "x": 27.59,
+     "y": 16.81,
+     "expect": [
+      "POLARITY",
+      "ROTATED"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "POLARITY"
+     ]
+    },
+    {
+     "type": "damaged",
+     "ref": "C16",
+     "pkg": "0805",
+     "x": 32.16,
+     "y": 8.8,
+     "expect": [
+      "MISMATCH",
+      "ANOMALY"
+     ],
+     "detected": false,
+     "classified": false,
+     "codes": []
+    },
+    {
+     "type": "ball",
+     "ref": "R2",
+     "pkg": "0805",
+     "x": 37.71,
+     "y": 6.31,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_parts": [],
+   "false_board": [],
+   "n_parts": 63,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d1",
+   "name": "bad1",
+   "batch": "B",
+   "kind": "bad",
+   "gt": [
+    {
+     "type": "wrong",
+     "ref": "R9",
+     "pkg": "0603",
+     "x": 36.64,
+     "y": 24.94,
+     "expect": [
+      "MISMATCH",
+      "MISSING",
+      "POLARITY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISMATCH"
+     ]
+    },
+    {
+     "type": "foreign",
+     "ref": null,
+     "x": 57.16,
+     "y": 41.26,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "tombstone",
+     "ref": "C16",
+     "pkg": "0805",
+     "x": 32.16,
+     "y": 8.8,
+     "expect": [],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISMATCH"
+     ]
+    },
+    {
+     "type": "no_solder",
+     "ref": "C13",
+     "pkg": "1206",
+     "x": 23.48,
+     "y": 29.22,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "shift",
+     "ref": "C8",
+     "pkg": "Tantalum_Case-A",
+     "x": 5.06,
+     "y": 12.4,
+     "expect": [
+      "SHIFT"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "SHIFT"
+     ]
+    },
+    {
+     "type": "polarity",
+     "ref": "D2",
+     "pkg": "SOD-123",
+     "x": 52.2,
+     "y": 5.09,
+     "expect": [
+      "POLARITY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "POLARITY"
+     ]
+    }
+   ],
+   "false_parts": [
+    {
+     "ref": "U7",
+     "package": "SOIC-8",
+     "defects": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_board": [],
+   "n_parts": 63,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d1",
+   "name": "bad2",
+   "batch": "A",
+   "kind": "bad",
+   "gt": [
+    {
+     "type": "ball",
+     "ref": "R14",
+     "pkg": "0603",
+     "x": 54.42,
+     "y": 18.64,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "no_solder",
+     "ref": "C6",
+     "pkg": "0805",
+     "x": 63.2,
+     "y": 37.91,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "wrong",
+     "ref": "C9",
+     "pkg": "1206",
+     "x": 50.68,
+     "y": 26.02,
+     "expect": [
+      "MISMATCH",
+      "MISSING",
+      "POLARITY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISMATCH"
+     ]
+    },
+    {
+     "type": "damaged",
+     "ref": "R3",
+     "pkg": "0805",
+     "x": 45.35,
+     "y": 16.52,
+     "expect": [
+      "MISMATCH",
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": false,
+     "codes": [
+      "MISSING"
+     ]
+    },
+    {
+     "type": "excess",
+     "ref": "Q1",
+     "pkg": "SOT-23",
+     "x": 58.53,
+     "y": 7.8,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "missing",
+     "ref": "C22",
+     "pkg": "0603",
+     "x": 21.41,
+     "y": 25.01,
+     "expect": [
+      "MISSING",
+      "MISMATCH"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISSING"
+     ]
+    }
+   ],
+   "false_parts": [],
+   "false_board": [],
+   "n_parts": 63,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d1",
+   "name": "bad3",
+   "batch": "B",
+   "kind": "bad",
+   "gt": [
+    {
+     "type": "marking",
+     "ref": "U5",
+     "pkg": "SOT-223",
+     "x": 52.56,
+     "y": 36.18,
+     "expect": [],
+     "detected": false,
+     "classified": false,
+     "codes": []
+    },
+    {
+     "type": "rot90",
+     "ref": "U2",
+     "pkg": "QFN-32",
+     "x": 38.68,
+     "y": 15.38,
+     "expect": [
+      "POLARITY",
+      "ROTATED"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "POLARITY"
+     ]
+    },
+    {
+     "type": "billboard",
+     "ref": "R1",
+     "pkg": "0805",
+     "x": 54.84,
+     "y": 14.73,
+     "expect": [],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISMATCH"
+     ]
+    },
+    {
+     "type": "tombstone",
+     "ref": "R5",
+     "pkg": "0402",
+     "x": 41.94,
+     "y": 9.07,
+     "expect": [],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISMATCH"
+     ]
+    },
+    {
+     "type": "bridge",
+     "ref": "U7",
+     "pkg": "SOIC-8",
+     "x": 16.33,
+     "y": 26.08,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "polarity",
+     "ref": "D6",
+     "pkg": "SOD-123",
+     "x": 58.96,
+     "y": 34.67,
+     "expect": [
+      "POLARITY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "POLARITY"
+     ]
+    }
+   ],
+   "false_parts": [
+    {
+     "ref": "C8",
+     "package": "Tantalum_Case-A",
+     "defects": [
+      "MISSING"
+     ]
+    }
+   ],
+   "false_board": [],
+   "n_parts": 63,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d2",
+   "name": "good_A0",
+   "batch": "A",
+   "kind": "good_A",
+   "gt": [],
+   "false_parts": [],
+   "false_board": [],
+   "n_parts": 65,
+   "verdict": "PASS"
+  },
+  {
+   "design": "d2",
+   "name": "good_A1",
+   "batch": "A",
+   "kind": "good_A",
+   "gt": [],
+   "false_parts": [
+    {
+     "ref": "R12",
+     "package": "0603",
+     "defects": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_board": [],
+   "n_parts": 65,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d2",
+   "name": "good_B0",
+   "batch": "B",
+   "kind": "good_B",
+   "gt": [],
+   "false_parts": [],
+   "false_board": [],
+   "n_parts": 65,
+   "verdict": "PASS"
+  },
+  {
+   "design": "d2",
+   "name": "good_B1",
+   "batch": "B",
+   "kind": "good_B",
+   "gt": [],
+   "false_parts": [
+    {
+     "ref": "R8",
+     "package": "0805",
+     "defects": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_board": [],
+   "n_parts": 65,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d2",
+   "name": "bad0",
+   "batch": "A",
+   "kind": "bad",
+   "gt": [
+    {
+     "type": "foreign",
+     "ref": null,
+     "x": 61.35,
+     "y": 15.02,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "rotate",
+     "ref": "Q1",
+     "pkg": "SOT-23",
+     "x": 54.24,
+     "y": 24.73,
+     "expect": [
+      "ROTATED"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ROTATED"
+     ]
+    },
+    {
+     "type": "shift",
+     "ref": "C14",
+     "pkg": "0805",
+     "x": 26.14,
+     "y": 7.69,
+     "expect": [
+      "SHIFT"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "SHIFT"
+     ]
+    },
+    {
+     "type": "rotate",
+     "ref": "D5",
+     "pkg": "SOD-123",
+     "x": 29.28,
+     "y": 30.65,
+     "expect": [
+      "ROTATED"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ROTATED"
+     ]
+    },
+    {
+     "type": "tombstone",
+     "ref": "R2",
+     "pkg": "1206",
+     "x": 30.49,
+     "y": 7.13,
+     "expect": [],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISMATCH"
+     ]
+    },
+    {
+     "type": "no_solder",
+     "ref": "U7",
+     "pkg": "SOT-223",
+     "x": 49.55,
+     "y": 41.18,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_parts": [],
+   "false_board": [],
+   "n_parts": 65,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d2",
+   "name": "bad1",
+   "batch": "B",
+   "kind": "bad",
+   "gt": [
+    {
+     "type": "polarity",
+     "ref": "D3",
+     "pkg": "SOD-123",
+     "x": 38.75,
+     "y": 17.66,
+     "expect": [
+      "POLARITY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "POLARITY"
+     ]
+    },
+    {
+     "type": "foreign",
+     "ref": null,
+     "x": 62.62,
+     "y": 43.94,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "missing",
+     "ref": "C5",
+     "pkg": "0805",
+     "x": 16.17,
+     "y": 24.18,
+     "expect": [
+      "MISSING",
+      "MISMATCH"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISMATCH"
+     ]
+    },
+    {
+     "type": "billboard",
+     "ref": "C20",
+     "pkg": "1206",
+     "x": 21.4,
+     "y": 6.31,
+     "expect": [],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISMATCH"
+     ]
+    },
+    {
+     "type": "bridge",
+     "ref": "U2",
+     "pkg": "QFN-32",
+     "x": 28.42,
+     "y": 15.51,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "wrong",
+     "ref": "C8",
+     "pkg": "0603",
+     "x": 11.81,
+     "y": 11.4,
+     "expect": [
+      "MISMATCH",
+      "MISSING",
+      "POLARITY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISMATCH"
+     ]
+    }
+   ],
+   "false_parts": [
+    {
+     "ref": "U4",
+     "package": "TSSOP-20",
+     "defects": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_board": [
+    {
+     "x_mm": 18.1,
+     "y_mm": 46.66,
+     "w_mm": 0.95,
+     "h_mm": 0.02,
+     "area_mm2": 0.022,
+     "_box_px": [
+      758.0,
+      143.0,
+      41.0,
+      1.0
+     ]
+    },
+    {
+     "x_mm": 14.51,
+     "y_mm": 46.56,
+     "w_mm": 1.21,
+     "h_mm": 0.05,
+     "area_mm2": 0.046,
+     "_box_px": [
+      598.0,
+      147.0,
+      52.0,
+      2.0
+     ]
+    },
+    {
+     "x_mm": 14.44,
+     "y_mm": 46.37,
+     "w_mm": 1.07,
+     "h_mm": 0.05,
+     "area_mm2": 0.047,
+     "_box_px": [
+      598.0,
+      155.0,
+      46.0,
+      2.0
+     ]
+    },
+    {
+     "x_mm": 23.29,
+     "y_mm": 45.3,
+     "w_mm": 2.07,
+     "h_mm": 0.05,
+     "area_mm2": 0.054,
+     "_box_px": [
+      957.0,
+      201.0,
+      89.0,
+      2.0
+     ]
+    },
+    {
+     "x_mm": 11.03,
+     "y_mm": 39.67,
+     "w_mm": 3.93,
+     "h_mm": 0.05,
+     "area_mm2": 0.106,
+     "_box_px": [
+      390.0,
+      443.0,
+      169.0,
+      2.0
+     ]
+    }
+   ],
+   "n_parts": 65,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d2",
+   "name": "bad2",
+   "batch": "A",
+   "kind": "bad",
+   "gt": [
+    {
+     "type": "marking",
+     "ref": "U4",
+     "pkg": "TSSOP-20",
+     "x": 15.25,
+     "y": 32.93,
+     "expect": [],
+     "detected": false,
+     "classified": false,
+     "codes": []
+    },
+    {
+     "type": "ball",
+     "ref": "C3",
+     "pkg": "0402",
+     "x": 48.76,
+     "y": 33.02,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "rot90",
+     "ref": "U1",
+     "pkg": "LQFP-48",
+     "x": 40.4,
+     "y": 8.77,
+     "expect": [
+      "POLARITY",
+      "ROTATED"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "POLARITY"
+     ]
+    },
+    {
+     "type": "damaged",
+     "ref": "C10",
+     "pkg": "1206",
+     "x": 51.08,
+     "y": 11.21,
+     "expect": [
+      "MISMATCH",
+      "ANOMALY"
+     ],
+     "detected": false,
+     "classified": false,
+     "codes": []
+    },
+    {
+     "type": "shift",
+     "ref": "C15",
+     "pkg": "Tantalum_Case-A",
+     "x": 63.74,
+     "y": 37.04,
+     "expect": [
+      "SHIFT"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "SHIFT"
+     ]
+    },
+    {
+     "type": "excess",
+     "ref": "U2",
+     "pkg": "QFN-32",
+     "x": 25.72,
+     "y": 17.96,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": false,
+     "codes": [
+      "MISSING"
+     ]
+    }
+   ],
+   "false_parts": [],
+   "false_board": [],
+   "n_parts": 65,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d2",
+   "name": "bad3",
+   "batch": "B",
+   "kind": "bad",
+   "gt": [
+    {
+     "type": "foreign",
+     "ref": null,
+     "x": 45.67,
+     "y": 33.4,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "tombstone",
+     "ref": "C23",
+     "pkg": "0805",
+     "x": 29.01,
+     "y": 35.8,
+     "expect": [],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISMATCH"
+     ]
+    },
+    {
+     "type": "polarity",
+     "ref": "C2",
+     "pkg": "Tantalum_Case-A",
+     "x": 26.98,
+     "y": 40.95,
+     "expect": [
+      "POLARITY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "POLARITY"
+     ]
+    },
+    {
+     "type": "no_solder",
+     "ref": "C25",
+     "pkg": "0603",
+     "x": 36.88,
+     "y": 44.97,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "excess",
+     "ref": "C27",
+     "pkg": "0402",
+     "x": 22.87,
+     "y": 46.01,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": false,
+     "codes": [
+      "MISSING"
+     ]
+    },
+    {
+     "type": "marking",
+     "ref": "U5",
+     "pkg": "TSSOP-20",
+     "x": 40.0,
+     "y": 36.08,
+     "expect": [],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_parts": [
+    {
+     "ref": "D6",
+     "package": "LED_0805",
+     "defects": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_board": [],
+   "n_parts": 65,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d3",
+   "name": "good_A0",
+   "batch": "A",
+   "kind": "good_A",
+   "gt": [],
+   "false_parts": [
+    {
+     "ref": "U4",
+     "package": "TSSOP-20",
+     "defects": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "ref": "C4",
+     "package": "0805",
+     "defects": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_board": [],
+   "n_parts": 70,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d3",
+   "name": "good_A1",
+   "batch": "A",
+   "kind": "good_A",
+   "gt": [],
+   "false_parts": [
+    {
+     "ref": "R3",
+     "package": "1206",
+     "defects": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "ref": "C13",
+     "package": "0603",
+     "defects": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_board": [],
+   "n_parts": 70,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d3",
+   "name": "good_B0",
+   "batch": "B",
+   "kind": "good_B",
+   "gt": [],
+   "false_parts": [],
+   "false_board": [],
+   "n_parts": 70,
+   "verdict": "PASS"
+  },
+  {
+   "design": "d3",
+   "name": "good_B1",
+   "batch": "B",
+   "kind": "good_B",
+   "gt": [],
+   "false_parts": [
+    {
+     "ref": "U2",
+     "package": "QFN-32",
+     "defects": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_board": [],
+   "n_parts": 70,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d3",
+   "name": "bad0",
+   "batch": "A",
+   "kind": "bad",
+   "gt": [
+    {
+     "type": "rot90",
+     "ref": "U5",
+     "pkg": "LQFP-48",
+     "x": 16.81,
+     "y": 36.99,
+     "expect": [
+      "POLARITY",
+      "ROTATED"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "POLARITY"
+     ]
+    },
+    {
+     "type": "damaged",
+     "ref": "C3",
+     "pkg": "0805",
+     "x": 55.13,
+     "y": 16.01,
+     "expect": [
+      "MISMATCH",
+      "ANOMALY"
+     ],
+     "detected": false,
+     "classified": false,
+     "codes": []
+    },
+    {
+     "type": "billboard",
+     "ref": "C14",
+     "pkg": "0805",
+     "x": 58.09,
+     "y": 10.86,
+     "expect": [],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISSING"
+     ]
+    },
+    {
+     "type": "rotate",
+     "ref": "U4",
+     "pkg": "TSSOP-20",
+     "x": 40.0,
+     "y": 41.37,
+     "expect": [
+      "ROTATED"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ROTATED"
+     ]
+    },
+    {
+     "type": "missing",
+     "ref": "C23",
+     "pkg": "0402",
+     "x": 35.29,
+     "y": 19.88,
+     "expect": [
+      "MISSING",
+      "MISMATCH"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISMATCH"
+     ]
+    },
+    {
+     "type": "ball",
+     "ref": "C17",
+     "pkg": "0603",
+     "x": 20.71,
+     "y": 24.84,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_parts": [
+    {
+     "ref": "U2",
+     "package": "QFN-32",
+     "defects": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_board": [],
+   "n_parts": 70,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d3",
+   "name": "bad1",
+   "batch": "B",
+   "kind": "bad",
+   "gt": [
+    {
+     "type": "shift",
+     "ref": "R17",
+     "pkg": "1206",
+     "x": 71.16,
+     "y": 11.61,
+     "expect": [
+      "SHIFT"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "SHIFT"
+     ]
+    },
+    {
+     "type": "bridge",
+     "ref": "U2",
+     "pkg": "QFN-32",
+     "x": 32.33,
+     "y": 7.29,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "wrong",
+     "ref": "D5",
+     "pkg": "SOD-123",
+     "x": 6.17,
+     "y": 23.9,
+     "expect": [
+      "MISMATCH",
+      "MISSING",
+      "POLARITY"
+     ],
+     "detected": true,
+     "classified": false,
+     "codes": [
+      "SHIFT"
+     ]
+    },
+    {
+     "type": "bridge",
+     "ref": "U3",
+     "pkg": "SOIC-8",
+     "x": 49.81,
+     "y": 31.99,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "no_solder",
+     "ref": "U6",
+     "pkg": "SOIC-16",
+     "x": 43.35,
+     "y": 7.73,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": false,
+     "classified": false,
+     "codes": []
+    },
+    {
+     "type": "wrong",
+     "ref": "R10",
+     "pkg": "0603",
+     "x": 24.06,
+     "y": 26.98,
+     "expect": [
+      "MISMATCH",
+      "MISSING",
+      "POLARITY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISMATCH"
+     ]
+    }
+   ],
+   "false_parts": [
+    {
+     "ref": "C24",
+     "package": "0402",
+     "defects": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_board": [],
+   "n_parts": 70,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d3",
+   "name": "bad2",
+   "batch": "A",
+   "kind": "bad",
+   "gt": [
+    {
+     "type": "rotate",
+     "ref": "R16",
+     "pkg": "0603",
+     "x": 54.24,
+     "y": 32.91,
+     "expect": [
+      "ROTATED"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ROTATED"
+     ]
+    },
+    {
+     "type": "marking",
+     "ref": "U5",
+     "pkg": "LQFP-48",
+     "x": 16.81,
+     "y": 36.99,
+     "expect": [],
+     "detected": false,
+     "classified": false,
+     "codes": []
+    },
+    {
+     "type": "ball",
+     "ref": "R22",
+     "pkg": "0603",
+     "x": 46.69,
+     "y": 22.18,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "rot90",
+     "ref": "U1",
+     "pkg": "LQFP-48",
+     "x": 19.82,
+     "y": 15.89,
+     "expect": [
+      "POLARITY",
+      "ROTATED"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "POLARITY"
+     ]
+    },
+    {
+     "type": "billboard",
+     "ref": "C16",
+     "pkg": "0603",
+     "x": 25.84,
+     "y": 39.67,
+     "expect": [],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISSING"
+     ]
+    },
+    {
+     "type": "missing",
+     "ref": "R6",
+     "pkg": "0402",
+     "x": 53.96,
+     "y": 5.85,
+     "expect": [
+      "MISSING",
+      "MISMATCH"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISMATCH"
+     ]
+    }
+   ],
+   "false_parts": [],
+   "false_board": [],
+   "n_parts": 70,
+   "verdict": "FAIL"
+  },
+  {
+   "design": "d3",
+   "name": "bad3",
+   "batch": "B",
+   "kind": "bad",
+   "gt": [
+    {
+     "type": "foreign",
+     "ref": null,
+     "x": 43.01,
+     "y": 26.45,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "shift",
+     "ref": "R4",
+     "pkg": "0603",
+     "x": 57.88,
+     "y": 33.76,
+     "expect": [
+      "SHIFT"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "SHIFT"
+     ]
+    },
+    {
+     "type": "damaged",
+     "ref": "U1",
+     "pkg": "LQFP-48",
+     "x": 19.82,
+     "y": 15.89,
+     "expect": [
+      "MISMATCH",
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "type": "tombstone",
+     "ref": "R16",
+     "pkg": "0603",
+     "x": 54.24,
+     "y": 32.91,
+     "expect": [],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "MISMATCH"
+     ]
+    },
+    {
+     "type": "excess",
+     "ref": "C5",
+     "pkg": "0805",
+     "x": 59.54,
+     "y": 40.35,
+     "expect": [
+      "ANOMALY"
+     ],
+     "detected": true,
+     "classified": false,
+     "codes": [
+      "MISSING"
+     ]
+    },
+    {
+     "type": "polarity",
+     "ref": "U6",
+     "pkg": "SOIC-16",
+     "x": 43.35,
+     "y": 7.73,
+     "expect": [
+      "POLARITY"
+     ],
+     "detected": true,
+     "classified": true,
+     "codes": [
+      "POLARITY"
+     ]
+    }
+   ],
+   "false_parts": [
+    {
+     "ref": "C2",
+     "package": "Tantalum_Case-A",
+     "defects": [
+      "ANOMALY"
+     ]
+    },
+    {
+     "ref": "R5",
+     "package": "0402",
+     "defects": [
+      "ANOMALY"
+     ]
+    }
+   ],
+   "false_board": [],
+   "n_parts": 70,
+   "verdict": "FAIL"
+  }
+ ]
+}
