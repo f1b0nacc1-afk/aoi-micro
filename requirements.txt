@@ -2,3 +2,6 @@ numpy>=1.24
 opencv-python-headless>=4.8
 # Basler: pypylon (+ pylon runtime). Hikrobot: MVS SDK, MvImport from its Samples/Python.
 # pypylon>=3.0
+# Neural detector (aoi/nn): torch with CUDA (https://pytorch.org), then
+# ultralytics>=8.3
+# huggingface_hub

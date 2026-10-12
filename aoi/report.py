@@ -11,7 +11,7 @@ import numpy as np
 
 COLORS = {"PASS": (60, 170, 60), "FAIL": (40, 40, 220), "SKIP": (160, 160, 160)}
 CSV_FIELDS = ["ref", "status", "defects", "value", "package", "mpn", "ncc", "ncc_thr", "ncc_180", "mad", "mad_thr", "mad_180",
-              "mark_ncc", "mark_ncc_180", "dx_mm", "dy_mm", "dtheta_deg", "anomaly_px"]
+              "mark_ncc", "mark_ncc_180", "dx_mm", "dy_mm", "dtheta_deg", "anomaly_px", "nn", "nn_expected", "nn_flags"]
 
 
 def _crop_panel(r: dict, scale_to: int = 160) -> np.ndarray:
@@ -74,14 +74,16 @@ def write_report(out: Path, board: np.ndarray, info: dict, results: list, extra:
         w = csv.DictWriter(f, fieldnames=CSV_FIELDS, extrasaction="ignore")
         w.writeheader()
         for r in clean:
-            w.writerow({**r, "defects": " ".join(r["defects"])})
+            w.writerow({**r, "defects": " ".join(r["defects"]), "nn_flags": " ".join(r.get("nn_flags", []))})
 
     order = sorted(clean, key=lambda r: (r["status"] != "FAIL", r["ref"]))
     rows = []
     for r in order:
         img = f'<img src="crops/{html.escape(r["ref"])}.png">' if r["ref"] in cropped else ""
         metrics = " · ".join(f"{m} {r[m]}" for m in ("ncc", "ncc_thr", "ncc_180", "mad", "mad_thr", "mad_180", "mark_ncc", "mark_ncc_180",
-                                                       "dx_mm", "dy_mm", "dtheta_deg", "anomaly_px") if m in r)
+                                                       "dx_mm", "dy_mm", "dtheta_deg", "anomaly_px", "nn") if m in r)
+        if r.get("nn_flags"):
+            metrics += f" · <b>{' '.join(r['nn_flags'])}</b> (ждали {r['nn_expected']})"
         rows.append(f'<tr class="{r["status"].lower()}"><td><b>{html.escape(r["ref"])}</b><br>'
                     f'<small>{html.escape(str(r["value"]))} · {html.escape(r["package"])}'
                     f'{" · " + html.escape(r["mpn"]) if r.get("mpn") else ""}</small></td>'

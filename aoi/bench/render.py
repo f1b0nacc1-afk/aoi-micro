@@ -417,7 +417,7 @@ def draw_foreign(cv: Canvas, f: dict, rng):
 
 
 def render_instance(design: dict, board: np.ndarray, batch: str, ovs: dict, foreign: list,
-                    rng: np.random.Generator, pose=True) -> np.ndarray:
+                    rng: np.random.Generator, pose=True, info: dict | None = None) -> np.ndarray:
     look = BATCH[batch]
     cv = Canvas(design["W"], design["H"], rng)
     cv.img = board + _lowfreq(board.shape, rng, 120, 1.5)
@@ -429,14 +429,15 @@ def render_instance(design: dict, board: np.ndarray, batch: str, ovs: dict, fore
             draw_extras(cv, part, ovs[part["ref"]], design, rng)
     for f in foreign:
         draw_foreign(cv, f, rng)
-    return camera(cv.img, design, rng, pose)
+    return camera(cv.img, design, rng, pose, info)
 
 
 def frame_px(design, x_mm, y_mm):
     return (x_mm + MARGIN) * S, (design["H"] - y_mm + MARGIN) * S
 
 
-def camera(board: np.ndarray, design: dict, rng, pose=True) -> np.ndarray:
+def camera(board: np.ndarray, design: dict, rng, pose=True, info: dict | None = None) -> np.ndarray:
+    """info, if given, receives "H": board canvas px -> frame px homography."""
     fw, fh = int((design["W"] + 2 * MARGIN) * S), int((design["H"] + 2 * MARGIN) * S)
     th = math.radians(rng.uniform(-0.8, 0.8)) if pose else 0.0
     tx = rng.uniform(-1.2, 1.2) * S if pose else 0.0
@@ -452,6 +453,8 @@ def camera(board: np.ndarray, design: dict, rng, pose=True) -> np.ndarray:
         P[2, 0], P[2, 1] = rng.normal(0, 6e-7), rng.normal(0, 6e-7)
     C = np.array([[1, 0, -fw / 2], [0, 1, -fh / 2], [0, 0, 1]])
     Hm = np.linalg.inv(C) @ P @ C @ A
+    if info is not None:
+        info["H"] = Hm
     img = cv2.warpPerspective(board, Hm, (fw, fh), flags=cv2.INTER_LINEAR, borderValue=17.0)
     yy, xx = np.mgrid[0:fh, 0:fw].astype(np.float32)
     rr = np.hypot(xx - fw / 2, yy - fh / 2) / math.hypot(fw / 2, fh / 2)

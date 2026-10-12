@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 import time
 from pathlib import Path
@@ -75,6 +76,31 @@ def cmd_fiducials(a):
     print(f"{len(found)} candidates, preview {out}. Впишите approx_px нужных в board.fiducials.")
 
 
+def cmd_calib_target(a):
+    from .calib import make_board, target_image
+    img = target_image(make_board(a.squares, a.square_mm, a.marker_mm), a.square_mm, a.dpi)
+    cv2.imwrite(a.out, img)
+    w, h = a.squares[0] * a.square_mm, a.squares[1] * a.square_mm
+    print(f"{a.out}: {w:.0f}×{h:.0f} мм поле клеток, печать {a.dpi} dpi в масштабе 100 %. "
+          f"После печати измерьте клетку штангенциркулем и передайте в --square-mm.")
+
+
+def cmd_calibrate(a):
+    from .calib import calibrate, make_board, save
+    from .camera import list_images, read_gray
+    files = list_images(a.images)
+    res = calibrate([(f.name, read_gray(f)) for f in files], make_board(a.squares, a.square_mm, a.marker_mm),
+                    k3=a.k3)
+    rep = save(res, Path(a.out), a.pixel_um)
+    print(f"RMS {res['rms_px']:.3f} px по {len(res['views'])} кадрам; K fx={res['K'][0, 0]:.1f} "
+          f"fy={res['K'][1, 1]:.1f} cx={res['K'][0, 2]:.1f} cy={res['K'][1, 2]:.1f}; D {rep['D']}")
+    for v in sorted(res["views"], key=lambda v: -v["rms_px"])[:5]:
+        print(f"  {v['name']}: {v['rms_px']} px, наклон {v['tilt_deg']}°, до плоскости {v['plane_dist_mm']} мм")
+    print(f"плоский кадр {res['flat_view']}: WD {res['wd_mm']:.1f} мм, {res['raw_px_per_mm']:.2f} px/мм"
+          + (f", f ≈ {rep['focal_mm_est']} мм" if a.pixel_um else ""))
+    print(f"в config.json: {json.dumps(rep['config_hint'], ensure_ascii=False)}")
+
+
 def cmd_train(a):
     from .camera import Undistorter, list_images, read_gray
     from .model import train
@@ -88,7 +114,14 @@ def cmd_train(a):
     print(f"model: {len(meta['parts'])} parts -> {a.golden}")
 
 
-def _inspect_file(cfg, path: Path, golden: Path, out: Path):
+def _load_nn(weights):
+    if not weights:
+        return None
+    from ultralytics import YOLO
+    return YOLO(weights)
+
+
+def _inspect_file(cfg, path: Path, golden: Path, out: Path, nn=None):
     from .align import BoardFrame
     from .camera import Undistorter, read_gray
     from .inspect import inspect_board
@@ -97,12 +130,19 @@ def _inspect_file(cfg, path: Path, golden: Path, out: Path):
     meta, arrays = load_model(golden)
     raw = Undistorter(resolve(cfg, cfg["optics"]["undistort_npz"]))(read_gray(path))
     t0 = time.time()
-    board, info, results, extra = inspect_board(raw, _components(cfg), meta, arrays, cfg)
+    comps = _components(cfg)
+    board, info, results, extra = inspect_board(raw, comps, meta, arrays, cfg)
+    if nn is not None:
+        from .nn.fuse import nn_check
+        ic = cfg["inspect"]
+        nn_check(nn, board, results, comps, cfg["board"]["px_per_mm"], ic["nn_conf"], ic["nn_veto"])
     dt = time.time() - t0
     summary = write_report(out, board, info, results, extra, BoardFrame(cfg), path.name)
     for r in results:
-        if r["status"] != "PASS":
-            print(f"  {r['ref']:6s} {r['status']:5s} {' '.join(r['defects'])}")
+        if r["status"] != "PASS" or r.get("nn_flags"):
+            nn_txt = f"  [NN {r['nn'] or '—'}, ждали {r['nn_expected']}: {' '.join(r['nn_flags'])}]" \
+                if r.get("nn_flags") else ""
+            print(f"  {r['ref']:6s} {r['status']:5s} {' '.join(r['defects'])}{nn_txt}")
     for e in extra:
         print(f"  board  FAIL  ANOMALY at ({e['x_mm']}, {e['y_mm']}) mm, {e['area_mm2']} mm²")
     print(f"{summary['verdict']}: {summary['n_fail_parts']} parts, {summary['n_board_anomalies']} board "
@@ -113,15 +153,53 @@ def _inspect_file(cfg, path: Path, golden: Path, out: Path):
 def cmd_inspect(a):
     from .camera import list_images
     cfg = load_config(a.config)
+    nn = _load_nn(a.nn)
     for f in list_images(a.images):
-        _inspect_file(cfg, f, Path(a.golden), Path(a.out) / f.stem)
+        _inspect_file(cfg, f, Path(a.golden), Path(a.out) / f.stem, nn)
 
 
 def cmd_run(a):
     cfg = load_config(a.config)
     stamp = time.strftime("%Y%m%d_%H%M%S")
     p = _grab(cfg, Path(a.out) / stamp / "raw.png")
-    _inspect_file(cfg, p, Path(a.golden), p.parent)
+    _inspect_file(cfg, p, Path(a.golden), p.parent, _load_nn(a.nn))
+
+
+def cmd_detect(a):
+    """Detector only, no CAD: file(s) or a fresh camera frame -> boxes overlay + JSON."""
+    import json as _json
+
+    from .camera import Undistorter, list_images, read_gray
+    from .nn.classes import NAMES
+    from .nn.detect import detect_tiled
+    from .nn.fuse import to_train_scale
+    cfg = load_config(a.config)
+    model = _load_nn(a.nn)
+    und = Undistorter(resolve(cfg, cfg["optics"]["undistort_npz"]))
+    out = Path(a.out)
+    files = list_images(a.images) if a.images else [_grab(cfg, out / f"{time.strftime('%Y%m%d_%H%M%S')}.png")]
+    for f in files:
+        raw = und(read_gray(f))
+        img, k = to_train_scale(raw, cfg["board"]["raw_px_per_mm"])
+        t0 = time.time()
+        det = detect_tiled(model, img, conf=a.conf)
+        dt = time.time() - t0
+        det[:, :4] /= k
+        vis = cv2.cvtColor(raw, cv2.COLOR_GRAY2BGR)
+        for x0, y0, x1, y1, c, cl in det:
+            col = (0, 0, 255) if NAMES[int(cl)] == "footprint" else (0, 200, 0)
+            cv2.rectangle(vis, (int(x0), int(y0)), (int(x1), int(y1)), col, 2)
+            cv2.putText(vis, f"{NAMES[int(cl)]} {c:.2f}", (int(x0), int(y0) - 4), cv2.FONT_HERSHEY_SIMPLEX,
+                        0.8, col, 2)
+        out.mkdir(parents=True, exist_ok=True)
+        cv2.imwrite(str(out / f"{f.stem}_det.jpg"), vis, [cv2.IMWRITE_JPEG_QUALITY, 90])
+        (out / f"{f.stem}_det.json").write_text(_json.dumps(
+            [{"cls": NAMES[int(cl)], "conf": round(float(c), 3), "box_px": [round(float(v), 1) for v in (x0, y0, x1, y1)]}
+             for x0, y0, x1, y1, c, cl in det], indent=1), encoding="utf-8")
+        counts = {}
+        for cl in det[:, 5]:
+            counts[NAMES[int(cl)]] = counts.get(NAMES[int(cl)], 0) + 1
+        print(f"{f.name}: {len(det)} деталей за {dt:.1f} с {counts} -> {out / (f.stem + '_det.jpg')}")
 
 
 def main(argv=None):
@@ -166,6 +244,25 @@ def main(argv=None):
     s.add_argument("image")
     s.set_defaults(fn=cmd_fiducials)
 
+    def target_args(s):
+        s.add_argument("--squares", type=int, nargs=2, default=[12, 8])
+        s.add_argument("--square-mm", type=float, default=8.0)
+        s.add_argument("--marker-mm", type=float, default=6.0)
+
+    s = sub.add_parser("calib-target", help="ChArUco-мишень для печати")
+    target_args(s)
+    s.add_argument("--dpi", type=int, default=600)
+    s.add_argument("--out", default="calib_target.png")
+    s.set_defaults(fn=cmd_calib_target)
+
+    s = sub.add_parser("calibrate", help="калибровка камеры по снимкам ChArUco-мишени")
+    target_args(s)
+    s.add_argument("--images", required=True, help="папка или glob")
+    s.add_argument("--out", default="calib/camera.npz")
+    s.add_argument("--pixel-um", type=float, default=2.4)
+    s.add_argument("--k3", action="store_true", help="оценивать k3 (по умолчанию фиксирован)")
+    s.set_defaults(fn=cmd_calibrate)
+
     s = sub.add_parser("train", help="обучить эталон по golden-платам")
     s.add_argument("-c", "--config", required=True)
     s.add_argument("--images", required=True, help="папка или glob")
@@ -177,13 +274,23 @@ def main(argv=None):
     s.add_argument("--images", required=True)
     s.add_argument("--golden", default="golden_model")
     s.add_argument("--out", default="reports")
+    s.add_argument("--nn", help="веса детектора компонентов (.pt) для второго мнения")
     s.set_defaults(fn=cmd_inspect)
 
     s = sub.add_parser("run", help="снять и проверить")
     s.add_argument("-c", "--config", required=True)
     s.add_argument("--golden", default="golden_model")
     s.add_argument("--out", default="reports")
+    s.add_argument("--nn", help="веса детектора компонентов (.pt) для второго мнения")
     s.set_defaults(fn=cmd_run)
+
+    s = sub.add_parser("detect", help="детектор компонентов без CAD: файлы или кадр с камеры")
+    s.add_argument("-c", "--config", required=True)
+    s.add_argument("--nn", required=True, help="веса детектора (.pt)")
+    s.add_argument("--images", help="папка или glob; без него — снять кадр с камеры")
+    s.add_argument("--out", default="detections")
+    s.add_argument("--conf", type=float, default=0.25)
+    s.set_defaults(fn=cmd_detect)
 
     a = ap.parse_args(argv)
     a.fn(a)

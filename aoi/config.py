@@ -69,6 +69,8 @@ DEFAULTS = {
         "board_anomaly_min_area_mm2": 0.02,
         "board_edge_mm": 0.6,
         "ecc_scale": 0.25,
+        "nn_conf": 0.25,
+        "nn_veto": False,
     },
 }
 

@@ -83,6 +83,47 @@ excess, bridge, ball, foreign, marking.
 (84.3% на отложенных дизайнах), брак как PASS — 0, ложные позиции 0.6–1.4% (baseline v0: 76.4% / 59.6%,
 61% ложных на новой партии).
 
+## Калибровка камеры (ChArUco)
+
+```bash
+python -m aoi calib-target --squares 12 8 --square-mm 8 --marker-mm 6 --out calib_target.png
+# печать 100 %, клетку измерить штангенциркулем; 15–25 кадров по всему полю, наклон до ~10–15°
+# (ГРИП на f/4 — единицы мм), последний кадр — мишень плашмя на плоскости платы
+python -m aoi capture -c config.json --n 20 --prefix calib --out calib_raw
+python -m aoi calibrate --images calib_raw --square-mm 7.98 --out calib/camera.npz
+```
+
+Пишет `camera.npz` (K, D — подхватывается через `optics.undistort_npz`) и `camera.json`: RMS
+перепроецирования (норма < 0.3 px), ошибки по кадрам, WD до главной плоскости и px/мм по плоскому кадру —
+готовые значения для `optics.wd_mm` и `board.raw_px_per_mm`. Проверено на синтетике (`tests/test_calib.py`):
+fx/cx/cy и k1 восстанавливаются с точностью < 0.5 %, WD ±0.7 мм.
+
+## Нейросетевой детектор компонентов (эксперимент, `aoi/nn/`)
+
+YOLO11s на 11 классов: resistor, capacitor, electrolytic, ic, transistor, diode, led, inductor, crystal,
+footprint (пустое посадочное место), other. Обучается на открытых датасетах (Roboflow circuit-elements,
+smd-components, переведены в mono) и на размеченных кадрах синтетического стенда (та же камера, 43 px/мм).
+
+```bash
+pip install ultralytics huggingface_hub   # + torch с CUDA
+python -c "from huggingface_hub import snapshot_download as d; d('LibreYOLO/circuit-elements', repo_type='dataset', local_dir='data/raw/circuit-elements'); d('gatilin/rf100-vl', repo_type='dataset', local_dir='data/raw/rf100-vl', allow_patterns=['smd-components/*'])"
+python -m aoi.nn.prep_public data/raw/circuit-elements data/raw/rf100-vl/smd-components --out data/yolo/public
+python -m aoi.nn.synth_export --out data/yolo/synth
+python -m aoi.nn.train --data data/yolo/public data/yolo/synth --name det_v0
+python -m aoi.nn.evaluate runs/nn/det_v0/weights/best.pt     # mAP по источникам + целые кадры стенда
+```
+
+На линии: `python -m aoi detect -c config.json --nn best.pt` — только детектор, без CAD (файлы или кадр
+с камеры, масштаб приводится к 43 px/мм по `raw_px_per_mm`); `inspect`/`run` с `--nn best.pt` — второе
+мнение по каждой CAD-позиции: `NN_EMPTY` (место пустое) и `NN_CLASS` (не тот тип детали). По умолчанию
+только пометки в отчёте; `inspect.nn_veto = true` делает их браком.
+
+Результат det_v0 (40 эпох, RTX 3080, ~65 мин; веса и графики в `nn_results/det_v0/`): синтетика стенда
+mAP50 0.93; на целых кадрах 6 новых дизайнов найдено 100% деталей, класс верный 98.7–100%, отсутствующая
+деталь замечена в 91.7%, подмена R↔C — 100%, 0.36 с на кадр. Публичные фото — mAP50 0.38: IC/LED/пустые места
+хорошо, мелкие R/C/диоды плохо (крошечные на снимках целых плат). Для реальной камеры нужно дообучение на
+своих кадрах; пустых мест в синтетике мало (набор `--missing 6` для следующей версии).
+
 ## Границы
 
 - Бэкенды камер написаны по pylon/MVS API, но на железе не проверены.
